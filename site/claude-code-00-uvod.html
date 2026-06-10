@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sr" style="--accent:#4f46e5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Claude Code Biblija — Od ideje do digitalnog proizvoda — Biblije</title>
+<meta name="description" content="Claude Code Biblija — Claude Code Biblija — Od ideje do digitalnog proizvoda">
+<meta property="og:title" content="Claude Code Biblija — Od ideje do digitalnog proizvoda">
+<meta property="og:description" content="Claude Code Biblija — Claude Code Biblija — Od ideje do digitalnog proizvoda">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%234f46e5'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('knjige-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<header class="topbar">
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Meni">☰</button>
+<a class="brand" href="index.html"><span class="dot"></span>Biblije</a>
+<span class="spacer"></span>
+<button class="icon-btn" onclick="toggleTheme()" aria-label="Promeni temu" title="Svetla / tamna tema">◐</button>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+<a href="index.html" class="home-link">← Početna</a>
+<div class="nav-group">
+<button class="nav-book"><span class="bk-dot" style="background:#4f46e5"></span>Claude Code Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="active" href="claude-code-00-uvod.html">Uvod</a></li>
+<li><a class="" href="claude-code-01-mentalni-model.html">1. Mentalni model</a></li>
+<li><a class="" href="claude-code-02-priprema-okruzenja.html">2. Priprema okruženja</a></li>
+<li><a class="" href="claude-code-03-temelji-projekta.html">3. Temelji projekta</a></li>
+<li><a class="" href="claude-code-04-od-ideje-do-specifikacije.html">4. Od ideje do specifikacije</a></li>
+<li><a class="" href="claude-code-05-planiranje-i-arhitektura.html">5. Planiranje i arhitektura</a></li>
+<li><a class="" href="claude-code-06-ritam-razvoja.html">6. Ritam razvoja</a></li>
+<li><a class="" href="claude-code-07-autonomni-rad.html">7. Autonomni rad</a></li>
+<li><a class="" href="claude-code-08-kvalitet-i-bezbednost.html">8. Kvalitet i bezbednost</a></li>
+<li><a class="" href="claude-code-09-lansiranje.html">9. Lansiranje</a></li>
+<li><a class="" href="claude-code-10-zivot-posle-lansiranja.html">10. Život posle lansiranja</a></li>
+<li><a class="" href="claude-code-11-majstorstvo-promptovanja.html">11. Majstorstvo promptovanja</a></li>
+<li><a class="" href="claude-code-12-ekosistem.html">12. Ekosistem</a></li>
+<li><a class="" href="claude-code-13-kada-krene-naopako.html">13. Kada stvari krenu naopako</a></li>
+<li><a class="" href="claude-code-14-dodaci.html">Dodaci</a></li>
+<li><a class="" href="claude-code-15-plan-edukacije.html">Za predavače: kako iz ovog dokumenta izvesti kurs</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#0d9488"></span>Marketing Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="marketing-00-uvod.html">Uvod</a></li>
+<li><a class="" href="marketing-01-metrike.html">1. Ekonomija SaaS-a</a></li>
+<li><a class="" href="marketing-02-pozicioniranje.html">2. Pozicioniranje i poruka</a></li>
+<li><a class="" href="marketing-03-plg.html">3. Proizvod kao marketing</a></li>
+<li><a class="" href="marketing-04-petlje.html">4. Growth petlje</a></li>
+<li><a class="" href="marketing-05-organski.html">5. Organski rast u AI eri</a></li>
+<li><a class="" href="marketing-06-paid.html">6. Plaćena akvizicija</a></li>
+<li><a class="" href="marketing-07-email.html">7. Email i lifecycle</a></li>
+<li><a class="" href="marketing-08-brend.html">8. Brend</a></li>
+<li><a class="" href="marketing-09-lansiranja.html">9. Lansiranja i momentum</a></li>
+<li><a class="" href="marketing-10-eksperimenti.html">10. Eksperimentalni pogon</a></li>
+<li><a class="" href="marketing-11-brandbook.html">11. Brandbook kao algoritam</a></li>
+<li><a class="" href="marketing-12-os.html">12. Autonomni marketinški OS</a></li>
+<li><a class="" href="marketing-13-plan.html">13. Plan uvođenja</a></li>
+<li><a class="" href="marketing-14-dodaci.html">Dodatak A: Rečnik i formule metrika</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#db2777"></span>Top 5% Edukator<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="edukator-00-uvod.html">Uvod</a></li>
+<li><a class="" href="edukator-01-sedam-razlika.html">1. Sedam razlika između top 5% i ostalih 95%</a></li>
+<li><a class="" href="edukator-02-nauka-ucenja.html">2. Nauka učenja</a></li>
+<li><a class="" href="edukator-03-dizajn-transformacije.html">3. Dizajn transformacije</a></li>
+<li><a class="" href="edukator-04-umetnost-objasnjavanja.html">4. Umetnost objašnjavanja i izvođenja</a></li>
+<li><a class="" href="edukator-05-iskustvo-i-zajednica.html">5. Iskustvo polaznika i zajednica</a></li>
+<li><a class="" href="edukator-06-pozicioniranje.html">6. Pozicioniranje</a></li>
+<li><a class="" href="edukator-07-dokazi-i-brend.html">7. Dokazni motor i lični brend</a></li>
+<li><a class="" href="edukator-08-coaching-plan.html">8. Tvoj 90-dnevni plan</a></li>
+<li><a class="" href="edukator-09-tvoj-slucaj.html">9. Primena na tvoj slučaj</a></li>
+</ul></div>
+</nav>
+<div class="content">
+<div class="article-wrap"><article class="article"><div class="crumbs"><a href="index.html">Početna</a><span class="sep">/</span><span>Claude Code Biblija</span></div><h1 id="claude-code-biblija--od-ideje-do-digitalnog-proizvoda">Claude Code Biblija — Od ideje do digitalnog proizvoda</h1>
+<h2 id="modul-0-dobrodošlica">Modul 0: Dobrodošlica</h2>
+<p>Dobro došao. Ako čitaš ovo, verovatno imaš ideju — za aplikaciju, alat, servis, nešto što bi rešilo problem tebi ili tvojim klijentima — ali nemaš programersko znanje da je sam napraviš. Do skoro, tvoje opcije su bile: nauči da programiraš (godine), zaposli programera (skupo), ili odustani (najčešće). Ovaj dokument postoji zato što se pojavila četvrta opcija, i ona menja sve.</p>
+<h3 id="kome-je-ovaj-dokument-namenjen">Kome je ovaj dokument namenjen</h3>
+<p>Pišemo za tebe ako si:</p>
+<ul>
+<li><strong>Preduzetnik</strong> koji želi da napravi i lansira sopstveni proizvod, bez čekanja na tehničkog suosnivača.</li>
+<li><strong>Kreativac</strong> — dizajner, pisac, video editor — koji ima viziju alata, ali ne i kod kojim bi je ostvario.</li>
+<li><strong>Menadžer</strong> koji želi da razume, prototipira i isporučuje digitalna rešenja, umesto da ih samo naručuje.</li>
+</ul>
+<p>Jedino što pretpostavljamo jeste da znaš da koristiš računar na nivou svakodnevnog rada: fajlovi, folderi, web pregledač. Ne pretpostavljamo da si ikada otvorio terminal — onaj crni prozor u koji se kucaju komande — niti da znaš šta je kod. Sve ćemo objasniti kad dođe na red, i to jezikom koji ima smisla.</p>
+<h3 id="obećanje">Obećanje</h3>
+<p>Na kraju ovog dokumenta umećeš samostalno da:</p>
+<ol type="1">
+<li>pretvoriš svoju ideju u jasnu specifikaciju proizvoda,</li>
+<li>izgradiš funkcionalan web proizvod uz Claude Code,</li>
+<li>proveriš njegov kvalitet i bezbednost,</li>
+<li>lansiraš ga na internet, na pravu adresu, za prave korisnike,</li>
+<li>održavaš ga i unapređuješ posle lansiranja.</li>
+</ol>
+<p>To nije marketinška fraza. Svaki modul ima vežbu koju odmah izvodiš, i svaki korak ima proverljiv kriterijum: ili radi, ili ne radi. Do kraja kursa imaćeš živ proizvod, ne sertifikat.</p>
+<h3 id="centralna-ideja-ti-si-direktor">Centralna ideja: ti si direktor</h3>
+<p>Claude Code je alat kompanije Anthropic dostupan kao terminal aplikacija i desktop aplikacija (Mac i Windows) na tvom računaru, kao web verzija na claude.ai/code, i kao ekstenzija (dodatak) za programerske editore — i koji ume da piše, menja, testira i pokreće kod — kompletne aplikacije, od početka do kraja.</p>
+<p>Najkorisniji način da o njemu razmišljaš: <strong>Claude Code je tvoj kompletan razvojni tim.</strong> U njemu sede programer koji piše kod, arhitekta koji bira kako će sistem biti složen, tester koji proverava da li sve radi, i DevOps inženjer — osoba koja se brine da proizvod stigne na internet i tamo ostane živ.</p>
+<p>A ko si onda ti? <strong>Ti si direktor proizvoda.</strong> Direktor ne mora da zna da vari čelik da bi vodio fabriku. Direktor mora da zna dve stvari:</p>
+<ol type="1">
+<li><strong>ŠTA se pravi</strong> — koji problem rešavamo, za koga, i kako proizvod treba da se ponaša.</li>
+<li><strong>KAKO ZNAMO DA JE GOTOVO</strong> — koji je proverljiv kriterijum da je posao završen.</li>
+</ol>
+<p>Sve između — <strong>KAKO</strong> se to tehnički izvodi — rešava tvoj tim, dakle Claude. Tvoj posao nije da razumeš svaki red koda, kao što posao direktora nije da razume svaki šraf. Tvoj posao je da postavljaš jasne zahteve, tražiš dokaze i donosiš odluke. Ceo ovaj dokument te uči upravo tome.</p>
+<p>Pogledaj razliku između zahteva koji direktor ne bi smeo da potpiše i onog koji bi:</p>
+<p>❌ „Napravi mi sajt za moju agenciju."</p>
+<p>✅ Ovako izgleda zahtev direktora:</p>
+<pre><code>Napravi početnu stranicu za moju agenciju za video produkciju.
+Sadržaj: naslov, kratak opis usluga, tri reference sa slikama,
+kontakt forma (ime, email, poruka).
+Gotovo je kada: stranica se otvara u browseru bez grešaka,
+forma odbija prazna polja, i pošalješ mi screenshot kako izgleda
+na telefonu i na velikom ekranu.</code></pre>
+<p>Prvi zahtev prepušta sve odluke slučaju. Drugi definiše ŠTA i KAKO ZNAMO DA JE GOTOVO — i zato dobija upotrebljiv rezultat. Formulu ovakvih zahteva razrađujemo detaljno u Modulu 6 i Modulu 11.</p>
+<h3 id="šta-ćeš-naučiti-iz-celog-dokumenta">Šta ćeš naučiti iz celog dokumenta</h3>
+<ul>
+<li>Kako Claude Code „razmišlja": šta pamti, šta zaboravlja, i kako da mu daš trajna uputstva.</li>
+<li>Kako da pripremiš računar i projekat tako da svaka izmena bude bezbedna i povratna.</li>
+<li>Kako da od magle u glavi dođeš do specifikacije koju i ti i Claude razumete isto.</li>
+<li>Ritam rada kojim se grade ozbiljni proizvodi: mali zadatak → provera → sledeći zadatak.</li>
+<li>Kako da pustiš Claude-a da radi samostalno, ali pod tvojim ogradama.</li>
+<li>Kako se proverava kvalitet i bezbednost koda koji nisi sam napisao.</li>
+<li>Kako se proizvod lansira, nadgleda i razvija posle lansiranja.</li>
+</ul>
+<h3 id="kako-da-koristiš-ovaj-dokument">Kako da koristiš ovaj dokument</h3>
+<p>Dokument je kurs. Čitaj module <strong>redom</strong> — svaki se oslanja na prethodne. Svaki modul (osim ovog uvodnog) ima istu strukturu: šta ćeš naučiti, gradivo sa primerima promptova koje možeš odmah da iskopiraš, vežbu koju izvodiš na svom računaru, najčešće greške, kontrolnu listu i tri pitanja za proveru znanja.</p>
+<p>Najvažniji savet: <strong>ne preskači vežbe.</strong> Čitanje o vožnji ne uči te da voziš. Petnaest minuta vežbe vredi više od sat vremena čitanja.</p>
+<p>Mapa kursa:</p>
+<table>
+<thead>
+<tr>
+<th>Modul</th>
+<th>Tema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><strong>Dobrodošlica</strong> — kome je namenjen, mentalni okvir „ti si direktor", tri pravila uspeha</td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Mentalni model</strong> — sesije, kontekst, <code>CLAUDE.md</code>, princip dokaza i merljivosti</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Priprema okruženja</strong> — terminal, instalacija, prijava, dozvole, prvi razgovor</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Temelji projekta</strong> — git, GitHub, <code>/init</code> i <code>CLAUDE.md</code>, testovi/lint/build kao merni instrumenti, CI</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Od ideje do specifikacije</strong> — brainstorm koji te izaziva, MVP rezanje, <code>docs/spec.md</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Planiranje i arhitektura</strong> — plan mode, tehničke odluke bez tehničkog znanja</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Ritam razvoja</strong> — ciklus feature-po-feature, formula savršenog prompta</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Autonomni rad</strong> — <code>/goal</code>, <code>/loop</code>, <code>/schedule</code>, zaštitne ograde</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Kvalitet i bezbednost</strong> — <code>/code-review</code>, <code>/security-review</code>, <code>/simplify</code>, čitanje nalaza</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Lansiranje</strong> — Vercel, env varijable, domen, pre-launch checklist</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Život posle lansiranja</strong> — monitoring, rutine, backlog, iteracije</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Majstorstvo promptovanja</strong> — 10 pravila sa ❌/✅ primerima</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Ekosistem</strong> — plugin-ovi, skill-ovi, MCP konektori</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Kada stvari krenu naopako</strong> — simptom → dijagnoza → lek</td>
+</tr>
+<tr>
+<td>Dodaci</td>
+<td>Cheat-sheet komandi, šabloni promptova, rečnik pojmova</td>
+</tr>
+<tr>
+<td>Za predavače</td>
+<td>Kako iz dokumenta izvesti kurs: radionice, kapstone projekat</td>
+</tr>
+</tbody>
+</table>
+<p>Usput ćeš sretati engleske termine koji su standard u ovom poslu — <em>commit</em>, <em>deploy</em>, <em>feature</em>, <em>backlog</em>. Zadržavamo ih u originalu jer ćeš ih tako sretati svuda, ali svaki objašnjavamo pri prvom pominjanju, a svi su sakupljeni u rečniku u Dodacima.</p>
+<h3 id="tri-pravila-uspeha">Tri pravila uspeha</h3>
+<p>Ako iz celog dokumenta poneseš samo tri stvari, neka budu ove. Sve ostalo je razrada.</p>
+<p><strong>Pravilo 1: Merljivost.</strong> Sve što tražiš mora imati proverljiv kriterijum gotovosti. „Napravi da bude lepo" niko ne može da proveri — ni Claude, ni ti. „Forma odbija prazan email i prikazuje poruku o grešci" može da se proveri za deset sekundi. Pre nego što pošalješ zahtev, zapitaj se: <em>kako ću znati da je ovo gotovo?</em> Ako nemaš odgovor, zahtev nije spreman.</p>
+<p><strong>Pravilo 2: Mali koraci.</strong> Sekvenca malih, verifikovanih zadataka uvek pobeđuje jedan džinovski. „Napravi mi celu aplikaciju" zvuči efikasno, ali kad nešto u toj planini ne radi, ne znaš ni gde da gledaš. Deset malih zadataka, gde posle svakog proveriš rezultat, znači da greška nikad nije dalje od poslednjeg koraka. Ovo je isti princip po kom se gradi kuća: temelj, pa zid, pa krov — i pregled posle svake faze.</p>
+<p><strong>Pravilo 3: Dokaz umesto poverenja.</strong> Kada Claude kaže „gotovo je, sve radi" — to je tvrdnja, ne dokaz. Direktor ne potpisuje na reč. Uvek traži dokaz: rezultat testa, screenshot stranice, log (zapis onoga što se zaista dogodilo pri izvršavanju). Claude ume da pokrene aplikaciju, klikće po njoj i napravi screenshot — iskoristi to. Rečenica koju ćeš najčešće dodavati na kraj svojih zahteva glasi:</p>
+<pre><code>Kad završiš, dokaži mi da radi: pokreni testove i pošalji rezultat,
+i napravi screenshot stranice u browseru.</code></pre>
+<p>Ova tri pravila nisu nepoverenje prema alatu — ona su način na koji svaki dobar direktor vodi svaki dobar tim, ljudski ili AI.</p>
+<p>Spreman? U Modulu 1 ulazimo u glavu tvog novog tima: šta Claude pamti, šta zaboravlja, i kako da mu središ radno okruženje da te razume iz prve.</p>
+<nav class="pager">
+<span></span>
+<a class="next" href="claude-code-01-mentalni-model.html"><span class="lbl">Sledeće →</span><span class="ttl">1. Mentalni model</span></a>
+</nav></article></div><aside class="toc"><div class="toc-inner">
+<div class="toc-title">Na ovoj strani</div><ul>
+<li class="lvl-2"><a href="#modul-0-dobrodošlica">Modul 0: Dobrodošlica</a></li>
+<li class="lvl-3"><a href="#kome-je-ovaj-dokument-namenjen">Kome je ovaj dokument namenjen</a></li>
+<li class="lvl-3"><a href="#obećanje">Obećanje</a></li>
+<li class="lvl-3"><a href="#centralna-ideja-ti-si-direktor">Centralna ideja: ti si direktor</a></li>
+<li class="lvl-3"><a href="#šta-ćeš-naučiti-iz-celog-dokumenta">Šta ćeš naučiti iz celog dokumenta</a></li>
+<li class="lvl-3"><a href="#kako-da-koristiš-ovaj-dokument">Kako da koristiš ovaj dokument</a></li>
+<li class="lvl-3"><a href="#tri-pravila-uspeha">Tri pravila uspeha</a></li>
+</ul></div></aside>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

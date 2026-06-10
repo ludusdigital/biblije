@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sr" style="--accent:#4f46e5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Modul 6: Ritam razvoja — feature po feature — Biblije</title>
+<meta name="description" content="Claude Code Biblija — Modul 6: Ritam razvoja — feature po feature">
+<meta property="og:title" content="Modul 6: Ritam razvoja — feature po feature">
+<meta property="og:description" content="Claude Code Biblija — Modul 6: Ritam razvoja — feature po feature">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%234f46e5'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('knjige-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<header class="topbar">
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Meni">☰</button>
+<a class="brand" href="index.html"><span class="dot"></span>Biblije</a>
+<span class="spacer"></span>
+<button class="icon-btn" onclick="toggleTheme()" aria-label="Promeni temu" title="Svetla / tamna tema">◐</button>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+<a href="index.html" class="home-link">← Početna</a>
+<div class="nav-group">
+<button class="nav-book"><span class="bk-dot" style="background:#4f46e5"></span>Claude Code Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="claude-code-00-uvod.html">Uvod</a></li>
+<li><a class="" href="claude-code-01-mentalni-model.html">1. Mentalni model</a></li>
+<li><a class="" href="claude-code-02-priprema-okruzenja.html">2. Priprema okruženja</a></li>
+<li><a class="" href="claude-code-03-temelji-projekta.html">3. Temelji projekta</a></li>
+<li><a class="" href="claude-code-04-od-ideje-do-specifikacije.html">4. Od ideje do specifikacije</a></li>
+<li><a class="" href="claude-code-05-planiranje-i-arhitektura.html">5. Planiranje i arhitektura</a></li>
+<li><a class="active" href="claude-code-06-ritam-razvoja.html">6. Ritam razvoja</a></li>
+<li><a class="" href="claude-code-07-autonomni-rad.html">7. Autonomni rad</a></li>
+<li><a class="" href="claude-code-08-kvalitet-i-bezbednost.html">8. Kvalitet i bezbednost</a></li>
+<li><a class="" href="claude-code-09-lansiranje.html">9. Lansiranje</a></li>
+<li><a class="" href="claude-code-10-zivot-posle-lansiranja.html">10. Život posle lansiranja</a></li>
+<li><a class="" href="claude-code-11-majstorstvo-promptovanja.html">11. Majstorstvo promptovanja</a></li>
+<li><a class="" href="claude-code-12-ekosistem.html">12. Ekosistem</a></li>
+<li><a class="" href="claude-code-13-kada-krene-naopako.html">13. Kada stvari krenu naopako</a></li>
+<li><a class="" href="claude-code-14-dodaci.html">Dodaci</a></li>
+<li><a class="" href="claude-code-15-plan-edukacije.html">Za predavače: kako iz ovog dokumenta izvesti kurs</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#0d9488"></span>Marketing Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="marketing-00-uvod.html">Uvod</a></li>
+<li><a class="" href="marketing-01-metrike.html">1. Ekonomija SaaS-a</a></li>
+<li><a class="" href="marketing-02-pozicioniranje.html">2. Pozicioniranje i poruka</a></li>
+<li><a class="" href="marketing-03-plg.html">3. Proizvod kao marketing</a></li>
+<li><a class="" href="marketing-04-petlje.html">4. Growth petlje</a></li>
+<li><a class="" href="marketing-05-organski.html">5. Organski rast u AI eri</a></li>
+<li><a class="" href="marketing-06-paid.html">6. Plaćena akvizicija</a></li>
+<li><a class="" href="marketing-07-email.html">7. Email i lifecycle</a></li>
+<li><a class="" href="marketing-08-brend.html">8. Brend</a></li>
+<li><a class="" href="marketing-09-lansiranja.html">9. Lansiranja i momentum</a></li>
+<li><a class="" href="marketing-10-eksperimenti.html">10. Eksperimentalni pogon</a></li>
+<li><a class="" href="marketing-11-brandbook.html">11. Brandbook kao algoritam</a></li>
+<li><a class="" href="marketing-12-os.html">12. Autonomni marketinški OS</a></li>
+<li><a class="" href="marketing-13-plan.html">13. Plan uvođenja</a></li>
+<li><a class="" href="marketing-14-dodaci.html">Dodatak A: Rečnik i formule metrika</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#db2777"></span>Top 5% Edukator<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="edukator-00-uvod.html">Uvod</a></li>
+<li><a class="" href="edukator-01-sedam-razlika.html">1. Sedam razlika između top 5% i ostalih 95%</a></li>
+<li><a class="" href="edukator-02-nauka-ucenja.html">2. Nauka učenja</a></li>
+<li><a class="" href="edukator-03-dizajn-transformacije.html">3. Dizajn transformacije</a></li>
+<li><a class="" href="edukator-04-umetnost-objasnjavanja.html">4. Umetnost objašnjavanja i izvođenja</a></li>
+<li><a class="" href="edukator-05-iskustvo-i-zajednica.html">5. Iskustvo polaznika i zajednica</a></li>
+<li><a class="" href="edukator-06-pozicioniranje.html">6. Pozicioniranje</a></li>
+<li><a class="" href="edukator-07-dokazi-i-brend.html">7. Dokazni motor i lični brend</a></li>
+<li><a class="" href="edukator-08-coaching-plan.html">8. Tvoj 90-dnevni plan</a></li>
+<li><a class="" href="edukator-09-tvoj-slucaj.html">9. Primena na tvoj slučaj</a></li>
+</ul></div>
+</nav>
+<div class="content">
+<div class="article-wrap"><article class="article"><div class="crumbs"><a href="index.html">Početna</a><span class="sep">/</span><span>Claude Code Biblija</span></div><h2 id="modul-6-ritam-razvoja--feature-po-feature">Modul 6: Ritam razvoja — feature po feature</h2>
+<p>Stigao si do srca cele metodologije. Sve do sada — okruženje, temelji, specifikacija, plan — bila je priprema. Odavde pa do lansiranja, 80% tvog vremena provodi se u jednom istom ciklusu koji se ponavlja za svaki feature (funkcionalnost — jednu zaokruženu stvar koju proizvod radi, npr. "kontakt forma" ili "prijava korisnika"). Kad taj ciklus uđe u ruke, razvoj prestaje da bude haos i postaje zanat: predvidiv, miran, merljiv.</p>
+<p>Zamisli ga kao pranje veša. Ne ubacuješ sve odjednom u mašinu — sortiraš, opereš jednu turu, proveriš da li je čisto, složiš, pa tek onda sledeća tura. Jedan feature = jedna tura.</p>
+<h3 id="šta-ćeš-naučiti">Šta ćeš naučiti</h3>
+<ul>
+<li>Ciklus od 7 koraka koji ponavljaš za svaki feature, od prazne sesije do potvrde da sve radi</li>
+<li>Zašto svaki feature zaslužuje svežu sesiju (<code>/clear</code>) i šta se dešava kad to preskočiš</li>
+<li>Kako da tražiš dokaz umesto obećanja — screenshot, test, log</li>
+<li>Formulu savršenog prompta: KONTEKST → ZADATAK → KRITERIJUM PRIHVATANJA → OGRANIČENJA</li>
+<li>Kompletan, stvaran primer jednog ciklusa koji možeš da kopiraš i prilagodiš</li>
+</ul>
+<h3 id="ciklus-od-7-koraka">Ciklus od 7 koraka</h3>
+<p><strong>Korak 1: <code>/clear</code> — sveža sesija za svaki feature.</strong> Sesija je jedan razgovor sa Claude-om, a kontekst je njegova radna memorija u tom razgovoru (detaljno u Modulu 1). Kad u istoj sesiji nakupiš tri feature-a, dve ispravke i jedan eksperiment, ta memorija se zatrpa — Claude počinje da meša stare zahteve sa novima, kao konobar koji pamti porudžbine celog dana umesto samo tvog stola. Zato: novi feature, nova sesija. Ne brini za "zaboravljanje" — sve trajno važno živi u <code>CLAUDE.md</code> i u tvojim fajlovima sa specifikacijom, a oni se učitavaju iznova.</p>
+<p><strong>Korak 2: Plan mode za sve što nije trivijalno.</strong> Plan mode je režim u kom Claude istražuje projekat i predlaže plan, ali ne menja nijedan fajl dok ti plan ne odobriš. Uključuješ ga prečicom <code>Shift+Tab</code> ili jednostavno napišeš: "prvo napravi plan, ne menjaj ništa dok ne odobrim". Pravilo palca: ako feature dira više od jednog fajla ili uvodi nešto novo (bazu, plaćanje, slanje mejlova) — plan mode. Ako je sitnica ("promeni boju dugmeta") — preskoči. Kako da čitaš i izazivaš predloženi plan naučio si u Modulu 5.</p>
+<p><strong>Korak 3: Implementacija.</strong> Odobriš plan i pustiš Claude-a da radi. Tvoj posao nije da razumeš svaki red koda, nego da pratiš da li se drži plana. Ako vidiš da skreće, <code>Esc</code> ga prekida usred rada i odmah možeš da ga preusmeriš — to nije nepristojno, to je upravljanje.</p>
+<p><strong>Korak 4: Verifikacija u browseru — traži dokaz.</strong> Ovo je korak koji početnici najčešće preskaču, a najviše vredi. Claude ume da pokrene dev server (lokalnu, probnu verziju tvoje aplikacije na tvom računaru), klikće po njoj, popunjava forme i pravi screenshotove. Nikad ne prihvataj "implementirano je" kao kraj — to je obećanje, ne dokaz.</p>
+<pre><code>Pokreni dev server, otvori stranicu /kontakt u browseru, popuni formu
+probnim podacima i pošalji je. Napravi screenshot forme pre slanja i
+screenshot poruke o uspehu posle slanja. Pokaži mi oba.</code></pre>
+<p><strong>Korak 5: <code>/code-review</code>.</strong> Pre nego što izmene proglasiš gotovim, pusti pregled koda: <code>/code-review</code> pregleda trenutne izmene i prijavi probleme. Ima nivoe temeljnosti (low/medium/high/max) — za svakodnevni rad srednji nivo je sasvim dovoljan. Šta znače nalazi i kada da posegneš za <code>/security-review</code> — detaljno u Modulu 8.</p>
+<p><strong>Korak 6: Commit.</strong> Commit je snimak stanja projekta u git-u — kao "sačuvaj igru" u video igrici: tačka kojoj uvek možeš da se vratiš (osnove git-a su u Modulu 3). Jedan feature = jedan commit (ili nekoliko manjih, ali nikad "sve od prošle nedelje odjednom").</p>
+<pre><code>Napravi commit ovih izmena sa jasnom porukom na srpskom koja opisuje
+šta feature radi, i pošalji na GitHub.</code></pre>
+<p><strong>Korak 7: <code>/loop</code> za praćenje CI-ja.</strong> CI (continuous integration) je automatska kontrola kvaliteta na GitHub-u koja posle svakog slanja koda sama pokreće testove (podesio si je u Modulu 3). Umesto da sediš i osvežavaš stranicu, zaduži Claude-a: <code>/loop 5m proveri status CI provera za poslednji commit; ako je nešto palo, ispravi i pošalji ponovo</code>. Petlja ponavlja prompt na zadati interval i prekida se sa <code>Esc</code>. Više o autonomnom radu i zaštitnim ogradama — Modul 7.</p>
+<p>I onda? <code>/clear</code> i sledeći feature. To je ceo ritam.</p>
+<h3 id="formula-savršenog-prompta">Formula savršenog prompta</h3>
+<p>Svaki dobar radni prompt ima četiri dela. Zapamti ih kao K-Z-K-O.</p>
+<p><strong>1. KONTEKST — gde Claude treba da gleda.</strong> Ne prepričavaj specifikaciju, uputi ga na nju:</p>
+<pre><code>Pročitaj docs/spec.md, sekciju &quot;Kontakt forma&quot;.</code></pre>
+<p><strong>2. ZADATAK — šta se pravi.</strong> Jedna jasna rečenica, jedan feature. Ako u zadatku stoji veznik "i" između dve različite stvari, verovatno su to dva ciklusa.</p>
+<p><strong>3. KRITERIJUM PRIHVATANJA — "gotovo je kad…".</strong> Ovo je najmoćniji deo i najčešće izostavljen. Bez njega Claude sam odlučuje šta znači "gotovo", a njegova definicija i tvoja se retko poklapaju. Kriterijum mora biti proverljiv:</p>
+<p>❌ <code>Napravi lepu kontakt formu.</code> (šta je "lepo"? kad je gotovo?) ✅ <code>Gotovo je kad: forma na /kontakt prima ime, email i poruku; posle slanja poruka se vidi u bazi; korisnik dobije potvrdu na ekranu; npm run build prolazi bez grešaka.</code></p>
+<p><strong>4. OGRANIČENJA — šta NE dirati.</strong> Claude je vredan i ponekad "usput" sredi i ono što nisi tražio. Ogradi teren:</p>
+<pre><code>Ne diraj postojeću stranicu /cenovnik ni navigaciju. Ne uvodi nove
+biblioteke bez pitanja. Postojeći testovi moraju i dalje da prolaze.</code></pre>
+<h3 id="kompletan-primer-kontakt-forma-koja-čuva-poruke-u-bazu">Kompletan primer: kontakt forma koja čuva poruke u bazu</h3>
+<p>Prođimo ceo ciklus na stvarnom feature-u, prompt po prompt.</p>
+<p><strong>1.</strong> Ukucaj <code>/clear</code>. Prazna tabla.</p>
+<p><strong>2.</strong> Plan (Shift+Tab za plan mode, pa):</p>
+<pre><code>Pročitaj docs/spec.md, sekciju &quot;Kontakt forma&quot;. Napravi plan za kontakt
+formu na stranici /kontakt: polja ime, email i poruka, čuvanje poruka
+u našu bazu, potvrda korisniku posle slanja, jasna poruka ako nešto
+pođe po zlu. Gotovo je kad poslata poruka postoji u bazi i korisnik
+vidi potvrdu. Ne diraj ostale stranice i ne uvodi nove biblioteke bez
+pitanja. Objasni mi plan jezikom za nekoga ko ne programira.</code></pre>
+<p><strong>3.</strong> Pročitaj plan, postavi pitanja ("šta se desi ako neko pošalje prazan email?"), odobri. Claude implementira.</p>
+<p><strong>4.</strong> Dokaz:</p>
+<pre><code>Pokreni dev server i verifikuj u browseru: popuni formu na /kontakt
+podacima &quot;Marko Marković, marko@test.com, Probna poruka&quot; i pošalji.
+Napravi screenshot potvrde. Zatim mi pokaži da ta poruka stvarno
+postoji u bazi. Probaj i slanje prazne forme — screenshot poruke
+o grešci.</code></pre>
+<p>Pogledaj screenshotove svojim očima. Ti si poslednja kontrola.</p>
+<p><strong>5.</strong> <code>/code-review</code> — pa zamoli Claude-a da ispravi ono što pregled nađe i ponovi verifikaciju iz koraka 4 ako je menjao logiku.</p>
+<p><strong>6.</strong> Commit:</p>
+<pre><code>Napravi commit sa porukom &quot;Dodaj kontakt formu sa čuvanjem poruka
+u bazu&quot; i pošalji na GitHub.</code></pre>
+<p><strong>7.</strong> <code>/loop 5m proveri da li su CI provere za poslednji commit prošle; ako je nešto palo, ispravi uzrok i pošalji ponovo</code>. Kad CI pozeleni, <code>Esc</code>, pa <code>/clear</code> — i sledeća tura veša.</p>
+<h3 id="vežba">Vežba</h3>
+<ol type="1">
+<li>Otvori svoj <code>docs/spec.md</code> (napravio si ga u Modulu 4) i izaberi najmanji nezapočeti feature sa liste.</li>
+<li>Napiši na papiru ili u beležnici njegova četiri dela: kontekst, zadatak, kriterijum prihvatanja, ograničenja. Ne preskači kriterijum!</li>
+<li>Ukucaj <code>/clear</code>, uđi u plan mode (<code>Shift+Tab</code>) i pošalji svoj prompt.</li>
+<li>Prođi svih 7 koraka do kraja, uključujući screenshot kao dokaz i commit.</li>
+<li>Na kraju zapiši: koji korak ti je bio najneprirodniji? Njega sledeći put radi prvo.</li>
+</ol>
+<h3 id="najčešće-greške">Najčešće greške</h3>
+<ol type="1">
+<li><strong>Nastavljanje u istoj sesiji ceo dan.</strong> Simptom: Claude "meša" stare i nove zahteve, vraća izmene koje si već odbacio. Rešenje: <code>/clear</code> posle svakog završenog feature-a; ako sesija mora da bude duga, <code>/compact</code> da sažme razgovor.</li>
+<li><strong>Prihvatanje "gotovo je" bez dokaza.</strong> Claude može iskreno da veruje da nešto radi — i da greši. Rešenje: uvek traži screenshot, izlaz testova ili log; korak 4 nije opcioni.</li>
+<li><strong>Prompt bez kriterijuma prihvatanja.</strong> Dobiješ nešto, ali ne ono što si hteo, pa kreće prepravljanje u krug. Rešenje: pre slanja prompta dopiši rečenicu koja počinje sa "Gotovo je kad…".</li>
+<li><strong>Tri feature-a u jednom promptu.</strong> Plan postane ogroman, verifikacija nemoguća, a kad nešto pukne ne znaš šta je krivac. Rešenje: jedan ciklus = jedan feature; ostalo ide u backlog (listu čekanja, Modul 10).</li>
+<li><strong>Commit "kad se nakupi".</strong> Posle nedelju dana imaš planinu izmena i nijednu sigurnu tačku za povratak. Rešenje: commit je korak 6 svakog ciklusa, ne mesečna proslava.</li>
+</ol>
+<h3 id="kontrolna-lista">Kontrolna lista</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Počeo sam feature sa <code>/clear</code>, u svežoj sesiji</label></li>
+<li><label><input type="checkbox" />Za netrivijalan feature koristio sam plan mode i odobrio plan pre izmena</label></li>
+<li><label><input type="checkbox" />Moj prompt ima sva četiri dela: kontekst, zadatak, kriterijum prihvatanja, ograničenja</label></li>
+<li><label><input type="checkbox" />Video sam dokaz da feature radi (screenshot, test, log) — ne samo tvrdnju</label></li>
+<li><label><input type="checkbox" />Pokrenuo sam <code>/code-review</code> i razrešio nalaze</label></li>
+<li><label><input type="checkbox" />Napravio sam commit sa jasnom porukom i poslao na GitHub</label></li>
+<li><label><input type="checkbox" />CI provere su zelene (pratio sam ih kroz <code>/loop</code> ili proverio ručno)</label></li>
+</ul>
+<h3 id="proveri-znanje">Proveri znanje</h3>
+<p><strong>1. Zašto se svaki feature radi u svežoj sesiji?</strong> Zato što se kontekst (radna memorija razgovora) vremenom zatrpa starim zahtevima i eksperimentima, pa Claude počinje da ih meša sa novim zadatkom. <code>/clear</code> daje čistu tablu, a trajno znanje ostaje u <code>CLAUDE.md</code> i fajlovima projekta.</p>
+<p><strong>2. Koja su četiri dela formule savršenog prompta i koji se najčešće zaboravlja?</strong> Kontekst (gde da gleda), zadatak (šta se pravi), kriterijum prihvatanja ("gotovo je kad…") i ograničenja (šta ne dirati). Najčešće se zaboravlja kriterijum prihvatanja — a bez njega Claude sam definiše "gotovo".</p>
+<p><strong>3. Šta je prihvatljiv dokaz da feature radi, a šta nije?</strong> Prihvatljivo: screenshot iz browsera, izlaz testova, zapis u bazi, log. Neprihvatljivo: rečenica "implementirano je" — to je obećanje, a ti tražiš dokaz koji možeš da vidiš svojim očima.</p>
+<nav class="pager">
+<a class="prev" href="claude-code-05-planiranje-i-arhitektura.html"><span class="lbl">← Prethodno</span><span class="ttl">5. Planiranje i arhitektura</span></a>
+<a class="next" href="claude-code-07-autonomni-rad.html"><span class="lbl">Sledeće →</span><span class="ttl">7. Autonomni rad</span></a>
+</nav></article></div><aside class="toc"><div class="toc-inner">
+<div class="toc-title">Na ovoj strani</div><ul>
+<li class="lvl-2"><a href="#šta-ćeš-naučiti">Šta ćeš naučiti</a></li>
+<li class="lvl-2"><a href="#ciklus-od-7-koraka">Ciklus od 7 koraka</a></li>
+<li class="lvl-2"><a href="#formula-savršenog-prompta">Formula savršenog prompta</a></li>
+<li class="lvl-2"><a href="#kompletan-primer-kontakt-forma-koja-čuva-poruke-u-bazu">Kompletan primer: kontakt forma koja čuva poruke u bazu</a></li>
+<li class="lvl-2"><a href="#vežba">Vežba</a></li>
+<li class="lvl-2"><a href="#najčešće-greške">Najčešće greške</a></li>
+<li class="lvl-2"><a href="#kontrolna-lista">Kontrolna lista</a></li>
+<li class="lvl-2"><a href="#proveri-znanje">Proveri znanje</a></li>
+</ul></div></aside>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sr" style="--accent:#4f46e5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Modul 9: Lansiranje — od tvog računara do interneta — Biblije</title>
+<meta name="description" content="Claude Code Biblija — Modul 9: Lansiranje — od tvog računara do interneta">
+<meta property="og:title" content="Modul 9: Lansiranje — od tvog računara do interneta">
+<meta property="og:description" content="Claude Code Biblija — Modul 9: Lansiranje — od tvog računara do interneta">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%234f46e5'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('knjige-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<header class="topbar">
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Meni">☰</button>
+<a class="brand" href="index.html"><span class="dot"></span>Biblije</a>
+<span class="spacer"></span>
+<button class="icon-btn" onclick="toggleTheme()" aria-label="Promeni temu" title="Svetla / tamna tema">◐</button>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+<a href="index.html" class="home-link">← Početna</a>
+<div class="nav-group">
+<button class="nav-book"><span class="bk-dot" style="background:#4f46e5"></span>Claude Code Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="claude-code-00-uvod.html">Uvod</a></li>
+<li><a class="" href="claude-code-01-mentalni-model.html">1. Mentalni model</a></li>
+<li><a class="" href="claude-code-02-priprema-okruzenja.html">2. Priprema okruženja</a></li>
+<li><a class="" href="claude-code-03-temelji-projekta.html">3. Temelji projekta</a></li>
+<li><a class="" href="claude-code-04-od-ideje-do-specifikacije.html">4. Od ideje do specifikacije</a></li>
+<li><a class="" href="claude-code-05-planiranje-i-arhitektura.html">5. Planiranje i arhitektura</a></li>
+<li><a class="" href="claude-code-06-ritam-razvoja.html">6. Ritam razvoja</a></li>
+<li><a class="" href="claude-code-07-autonomni-rad.html">7. Autonomni rad</a></li>
+<li><a class="" href="claude-code-08-kvalitet-i-bezbednost.html">8. Kvalitet i bezbednost</a></li>
+<li><a class="active" href="claude-code-09-lansiranje.html">9. Lansiranje</a></li>
+<li><a class="" href="claude-code-10-zivot-posle-lansiranja.html">10. Život posle lansiranja</a></li>
+<li><a class="" href="claude-code-11-majstorstvo-promptovanja.html">11. Majstorstvo promptovanja</a></li>
+<li><a class="" href="claude-code-12-ekosistem.html">12. Ekosistem</a></li>
+<li><a class="" href="claude-code-13-kada-krene-naopako.html">13. Kada stvari krenu naopako</a></li>
+<li><a class="" href="claude-code-14-dodaci.html">Dodaci</a></li>
+<li><a class="" href="claude-code-15-plan-edukacije.html">Za predavače: kako iz ovog dokumenta izvesti kurs</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#0d9488"></span>Marketing Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="marketing-00-uvod.html">Uvod</a></li>
+<li><a class="" href="marketing-01-metrike.html">1. Ekonomija SaaS-a</a></li>
+<li><a class="" href="marketing-02-pozicioniranje.html">2. Pozicioniranje i poruka</a></li>
+<li><a class="" href="marketing-03-plg.html">3. Proizvod kao marketing</a></li>
+<li><a class="" href="marketing-04-petlje.html">4. Growth petlje</a></li>
+<li><a class="" href="marketing-05-organski.html">5. Organski rast u AI eri</a></li>
+<li><a class="" href="marketing-06-paid.html">6. Plaćena akvizicija</a></li>
+<li><a class="" href="marketing-07-email.html">7. Email i lifecycle</a></li>
+<li><a class="" href="marketing-08-brend.html">8. Brend</a></li>
+<li><a class="" href="marketing-09-lansiranja.html">9. Lansiranja i momentum</a></li>
+<li><a class="" href="marketing-10-eksperimenti.html">10. Eksperimentalni pogon</a></li>
+<li><a class="" href="marketing-11-brandbook.html">11. Brandbook kao algoritam</a></li>
+<li><a class="" href="marketing-12-os.html">12. Autonomni marketinški OS</a></li>
+<li><a class="" href="marketing-13-plan.html">13. Plan uvođenja</a></li>
+<li><a class="" href="marketing-14-dodaci.html">Dodatak A: Rečnik i formule metrika</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#db2777"></span>Top 5% Edukator<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="edukator-00-uvod.html">Uvod</a></li>
+<li><a class="" href="edukator-01-sedam-razlika.html">1. Sedam razlika između top 5% i ostalih 95%</a></li>
+<li><a class="" href="edukator-02-nauka-ucenja.html">2. Nauka učenja</a></li>
+<li><a class="" href="edukator-03-dizajn-transformacije.html">3. Dizajn transformacije</a></li>
+<li><a class="" href="edukator-04-umetnost-objasnjavanja.html">4. Umetnost objašnjavanja i izvođenja</a></li>
+<li><a class="" href="edukator-05-iskustvo-i-zajednica.html">5. Iskustvo polaznika i zajednica</a></li>
+<li><a class="" href="edukator-06-pozicioniranje.html">6. Pozicioniranje</a></li>
+<li><a class="" href="edukator-07-dokazi-i-brend.html">7. Dokazni motor i lični brend</a></li>
+<li><a class="" href="edukator-08-coaching-plan.html">8. Tvoj 90-dnevni plan</a></li>
+<li><a class="" href="edukator-09-tvoj-slucaj.html">9. Primena na tvoj slučaj</a></li>
+</ul></div>
+</nav>
+<div class="content">
+<div class="article-wrap"><article class="article"><div class="crumbs"><a href="index.html">Početna</a><span class="sep">/</span><span>Claude Code Biblija</span></div><h2 id="modul-9-lansiranje--od-tvog-računara-do-interneta">Modul 9: Lansiranje — od tvog računara do interneta</h2>
+<p>Do sada je tvoj proizvod živeo samo na tvom računaru: radio je, prošao preglede kvaliteta iz Modula 8 — ali niko osim tebe ne može da ga vidi. U ovom modulu izlazi na internet: prvo na probnu adresu koju vidiš samo ti, zatim na pravu, javnu adresu sa tvojim domenom.</p>
+<h3 id="šta-ćeš-naučiti">Šta ćeš naučiti</h3>
+<ul>
+<li>Šta znači deploy i zašto se uvek radi u dva koraka: prvo proba, pa javnost</li>
+<li>Kako da povežeš projekat sa Vercel-om i objaviš ga uz pomoć Claude-a</li>
+<li>Šta su env varijable i zašto API ključevi nikad ne smeju u kod</li>
+<li>Zašto ti trebaju odvojene baze za testiranje i produkciju</li>
+<li>Pre-launch checklist i strategiju mekog lansiranja</li>
+</ul>
+<h3 id="šta-je-deploy-otvaranje-radnje">Šta je deploy: otvaranje radnje</h3>
+<p>Zamisli da si nedeljama pravio nameštaj u svojoj radionici — ali radionica je zaključana i mušterije ne mogu da uđu. <strong>Deploy</strong> (izgovara se „diploj") je trenutak kad otvoriš radnju na glavnoj ulici: kopiraš aplikaciju sa svog računara na servere koji su stalno upaljeni i dostupni svima na internetu.</p>
+<p>Tvoj računar nije dobar server: gasiš ga, nosiš ga na put, internet ti varira. Zato u ovom kursu koristimo <strong>Vercel</strong> — servis koji uzme tvoj kod sa GitHub-a (postavili smo ga u Modulu 3), sagradi aplikaciju i drži je dostupnom 24/7, a uz to odlično sarađuje sa Claude Code-om kroz vercel plugin.</p>
+<h3 id="pre-nego-što-počneš">Pre nego što počneš</h3>
+<p>Dva preduslova. Prvo, besplatan nalog na vercel.com — obična registracija klikovima, kao na bilo kom servisu. Drugo, vercel plugin u Claude Code-u; zamoli Claude-a:</p>
+<pre><code>Hoću da dodam vercel plugin u ovaj projekat, provedi me kroz
+instalaciju korak po korak.</code></pre>
+<p>Detaljna priča o plugin-ovima čeka te u Modulu 12; za sada je dovoljno da je instaliran — bez njega komande iz ovog modula ne postoje u tvojoj sesiji.</p>
+<h3 id="korak-1-povezivanje--vercelbootstrap">Korak 1: Povezivanje — <code>/vercel:bootstrap</code></h3>
+<p>Projekat zatim povezuješ sa Vercel nalogom komandom:</p>
+<pre><code>/vercel:bootstrap</code></pre>
+<p>Ona pokreće vođeni proces: proveri da li je sve spremno, poveže tvoj repozitorijum sa Vercel projektom i sredi env varijable (o njima za koji pasus). Ako te negde zaglavi, opiši Claude-u šta vidiš:</p>
+<pre><code>Pokrenuo sam /vercel:bootstrap i dobio poruku o grešci koju ne razumem.
+Evo šta piše na ekranu: [nalepi poruku]. Objasni mi šta znači i provedi
+me kroz rešenje korak po korak, kao nekoga ko ovo radi prvi put.</code></pre>
+<h3 id="korak-2-preview-deploy--proba-pre-javnosti">Korak 2: Preview deploy — proba pre javnosti</h3>
+<p>Ovde dolazi najvažnija navika ovog modula: <strong>nikad ne ideš direktno u produkciju</strong>. Prvo praviš preview deploy — probnu verziju na privatnom linku koji znaš samo ti. To je generalna proba u pozorištu: sve je kao na premijeri, samo publika još nije ušla.</p>
+<pre><code>/vercel:deploy</code></pre>
+<p>Bez dodatnih argumenata, ova komanda pravi upravo preview deploy. Kad se završi, otvori dobijeni link i prođi kroz aplikaciju kao prvi korisnik: registruj se, klikni svako dugme, probaj glavni tok od početka do kraja. Na svom računaru si testirao hiljadu puta — ali server je drugačije okruženje, i baš tu isplivaju greške tipa „kod mene radi".</p>
+<h3 id="korak-3-produkcija">Korak 3: Produkcija</h3>
+<p>Tek kad preview verzija radi besprekorno, šalješ u produkciju:</p>
+<pre><code>/vercel:deploy prod</code></pre>
+<p>To je premijera — aplikacija je na javnoj adresi, dostupna svakome. Vercel automatski daje adresu oblika <code>tvoj-projekat.vercel.app</code>, sasvim dovoljnu za početak.</p>
+<h3 id="env-varijable-ključevi-od-stana-se-ne-lepe-na-vrata">Env varijable: ključevi od stana se ne lepe na vrata</h3>
+<p>Tvoja aplikacija koristi tajne: API ključ za OpenAI, lozinku za bazu, slično. <strong>API ključ</strong> je kao ključ od stana — ko ga ima, ulazi i troši o tvom trošku. Ako ključ završi u kodu, a kod ode na GitHub, to je kao da si ga zalepio na ulazna vrata sa ceduljom „izvolite". Botovi non-stop pretražuju GitHub baš tražeći ovakve procurele ključeve — zloupotreba stiže za par minuta.</p>
+<p>Rešenje su <strong>env varijable</strong> (environment variables, „promenljive okruženja"): tajne se čuvaju van koda, u posebnom sefu — lokalno u fajlu <code>.env.local</code> koji nikad ne ide na git, a na Vercel-u u podešavanjima projekta. Kod onda kaže samo „uzmi ključ iz sefa", bez ključa u sebi.</p>
+<p>Dobra vest: ovo ne radiš ručno — zamoli Claude-a:</p>
+<pre><code>Proveri ceo projekat: da li je neki API ključ, lozinka ili tajna upisana
+direktno u kod? Ako jeste, prebaci je u env varijablu, dodaj je u
+.env.local, i proveri da je .env.local naveden u .gitignore fajlu
+(da nikad ne ode na GitHub). Zatim mi izlistaj sve env varijable koje
+moram da unesem u Vercel za produkciju, sa objašnjenjem čemu svaka služi.</code></pre>
+<p>Komanda <code>/security-review</code> iz Modula 8 takođe hvata procurele tajne pre nego što odu na GitHub — još jedan razlog da je pokrećeš redovno.</p>
+<h3 id="tvoj-domen-adresa-radnje">Tvoj domen: adresa radnje</h3>
+<p><code>tvoj-projekat.vercel.app</code> radi, ali deluje privremeno. Sopstveni domen (<code>tvojproizvod.com</code> ili <code>.rs</code>) je adresa tvoje radnje i deo brenda: kupuješ ga kod registra (Namecheap, GoDaddy, za .rs domene domaći registri), pa ga povežeš sa Vercel projektom kroz DNS podešavanja — internet imenik koji ukucanu adresu vodi na pravi server. U praksi je to unošenje dve-tri vrednosti koje ti Vercel prikaže. Zamoli Claude-a da te provede:</p>
+<pre><code>Kupio sam domen mojproizvod.rs kod [ime registra]. Provedi me korak po
+korak kroz povezivanje tog domena sa mojim Vercel projektom: šta tačno
+da unesem u DNS podešavanja kod registra i kako da proverim da je uspelo.</code></pre>
+<h3 id="dve-baze-nikad-ne-testiraš-na-pravim-podacima">Dve baze: nikad ne testiraš na pravim podacima</h3>
+<p>Ako tvoj proizvod koristi bazu podataka (preko supabase plugin-a iz Modula 5), od lansiranja važi gvozdeno pravilo: <strong>odvojena baza za razvoj, odvojena za produkciju</strong>.</p>
+<p>Zašto? Zamisli da posle lansiranja kažeš Claude-u „obriši sve test naloge", a povezan si na produkcijsku bazu — upravo si obrisao prave korisnike. Sa dve baze takva greška košta te nula: razvojnu slobodno puniš, brišeš i lomiš, produkcijska ostaje netaknuta.</p>
+<pre><code>Hoću odvojene Supabase baze za razvoj i produkciju. Postavi projekat tako
+da lokalni razvoj koristi razvojnu bazu, a Vercel produkcija produkcijsku,
+preko env varijabli. Na kraju mi pokaži kako da u svakom trenutku proverim
+na koju bazu sam trenutno povezan.</code></pre>
+<h3 id="pre-launch-checklist-i-soft-launch">Pre-launch checklist i soft launch</h3>
+<p>Pre nego što adresu podeliš sa svetom, prođi listu na kraju modula. Dve stavke zaslužuju dodatnu reč:</p>
+<p><strong>Pravne stranice.</strong> Uslovi korišćenja i politika privatnosti nisu ukras — ako prikupljaš bilo kakve podatke korisnika (čak i samo email), zakonski su obavezne. Claude ti može sastaviti solidan nacrt prilagođen tvom proizvodu; za ozbiljan biznis daj ga pravniku na pregled.</p>
+<p><strong>Praćenje grešaka.</strong> Kad korisniku nešto pukne, najčešće ti neće javiti — samo će otići. Zato zamoli Claude-a da u aplikaciju uveže servis za praćenje grešaka (npr. Sentry), koji ti javi čim se greška pojavi. Više o tome u Modulu 10.</p>
+<p>I na kraju — <strong>soft launch</strong> („meko lansiranje"). Ne objavljuj proizvod odmah svima: prvo ga pošalji grupi od 5–15 poznanika i zamoli ih da ga koriste nedelju dana. Oni će naći probleme na koje ne bi pomislio, a oprostiće ti ih — nepoznata publika neće, ona se ne vraća. Tek kad prva grupa prođe bez ozbiljnih problema, ideš javno.</p>
+<h3 id="vežba">Vežba</h3>
+<ol start="0" type="1">
+<li>Ako već nisi: nalog na vercel.com i vercel plugin (prompt iz odeljka „Pre nego što počneš").</li>
+<li>Pokreni Claude Code u folderu projekta i izvrši <code>/vercel:bootstrap</code>. Ako zapne, nalepi Claude-u poruku o grešci i traži objašnjenje.</li>
+<li>Pokreni prompt za proveru tajni iz odeljka o env varijablama. Uveri se da nijedan ključ nije u kodu i da je <code>.env.local</code> u <code>.gitignore</code>.</li>
+<li>Napravi preview deploy: <code>/vercel:deploy</code>. Otvori dobijeni link i prođi glavni tok kao novi korisnik. Zapiši svaki problem.</li>
+<li>Ako si našao probleme, reši ih sa Claude-om (ritam iz Modula 6), pa ponovi preview.</li>
+<li>Pokreni <code>/security-review</code>, a zatim zamoli Claude-a: „Pokreni sve testove i pokaži mi izlaz" — oba moraju biti čista.</li>
+<li>Tek tada: <code>/vercel:deploy prod</code>. Otvori javnu adresu sa telefona, ne sa svog računara — i čestitaj sebi.</li>
+<li>Pošalji link trojici poznanika sa molbom da probaju i jave šta ih je zbunilo.</li>
+</ol>
+<h3 id="najčešće-greške">Najčešće greške</h3>
+<ol type="1">
+<li><strong>Prvi deploy ide pravo u produkciju.</strong> „Radi kod mene" ne znači „radi na serveru". Rešenje: uvek prvo <code>/vercel:deploy</code> (preview), klikći kroz aplikaciju na privatnom linku, pa tek onda <code>prod</code>.</li>
+<li><strong>API ključ završi na GitHub-u.</strong> Najskuplja greška ovog modula — botovi je nalaze za par minuta. Rešenje: prompt za proveru tajni pre svakog deploy-a; procureli ključ odmah poništi kod izdavaoca (OpenAI, Supabase…) i napravi novi — brisanje iz koda nije dovoljno, git pamti istoriju.</li>
+<li><strong>Jedna baza za sve.</strong> Testiranjem nove funkcije obrišeš ili iskvariš prave podatke korisnika. Rešenje: odvojena razvojna i produkcijska baza od prvog dana, povezane preko env varijabli.</li>
+<li><strong>Aplikacija radi na preview linku, ali ne u produkciji.</strong> Najčešći uzrok: env varijable unete za preview, ali ne i za produkciju. Rešenje: zamoli Claude-a da uporedi okruženja i izlista šta nedostaje.</li>
+<li><strong>Veliko lansiranje bez probne publike.</strong> Sve karte na javnu objavu prvog dana, pa prvi utisak pokvari bag koji bi poznanik našao za sat. Rešenje: soft launch — mala grupa prvo, javnost posle.</li>
+</ol>
+<h3 id="kontrolna-lista">Kontrolna lista</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" /><code>/vercel:bootstrap</code> izvršen, projekat povezan sa Vercel-om</label></li>
+<li><label><input type="checkbox" />Nijedna tajna nije u kodu; sve su u env varijablama, <code>.env.local</code> je u <code>.gitignore</code></label></li>
+<li><label><input type="checkbox" />Env varijable unete u Vercel i za preview i za produkcijsko okruženje</label></li>
+<li><label><input type="checkbox" />Preview deploy pregledan klik-po-klik, glavni tok radi</label></li>
+<li><label><input type="checkbox" />Svi testovi zeleni, <code>/security-review</code> bez kritičnih nalaza</label></li>
+<li><label><input type="checkbox" />Odvojene baze za razvoj i produkciju; backup produkcijske baze uključen</label></li>
+<li><label><input type="checkbox" />Praćenje grešaka (npr. Sentry) uvezano i proveren da prijavljuje</label></li>
+<li><label><input type="checkbox" />Stranice za uslove korišćenja i privatnost objavljene</label></li>
+<li><label><input type="checkbox" />Sopstveni domen povezan i radi (proveri sa drugog uređaja)</label></li>
+<li><label><input type="checkbox" />Soft launch: 5–15 poznanika koristilo proizvod pre javne objave</label></li>
+</ul>
+<h3 id="proveri-znanje">Proveri znanje</h3>
+<p><strong>Zašto se nikad ne ide direktno u produkciju, nego prvo na preview deploy?</strong> Server je drugačije okruženje od tvog računara — greške koje lokalno ne vidiš isplivaju tek tamo. Preview je generalna proba na privatnom linku: greške hvataš pre korisnika.</p>
+<p><strong>Šta su env varijable i šta uraditi ako API ključ ipak završi na GitHub-u?</strong> Tajne (ključevi, lozinke) koje se čuvaju van koda — lokalno u <code>.env.local</code>, na Vercel-u u podešavanjima projekta. Procureli ključ odmah poništi kod izdavaoca i napravi novi; brisanje iz koda ne pomaže, git pamti istoriju.</p>
+<p><strong>Zašto su potrebne dve odvojene baze podataka?</strong> Da razvoj nikad ne dira prave podatke korisnika: razvojnu bazu smeš da lomiš bez posledica, produkcijska ostaje netaknuta, a koju kod koristi određuju env varijable po okruženju.</p>
+<nav class="pager">
+<a class="prev" href="claude-code-08-kvalitet-i-bezbednost.html"><span class="lbl">← Prethodno</span><span class="ttl">8. Kvalitet i bezbednost</span></a>
+<a class="next" href="claude-code-10-zivot-posle-lansiranja.html"><span class="lbl">Sledeće →</span><span class="ttl">10. Život posle lansiranja</span></a>
+</nav></article></div><aside class="toc"><div class="toc-inner">
+<div class="toc-title">Na ovoj strani</div><ul>
+<li class="lvl-2"><a href="#šta-ćeš-naučiti">Šta ćeš naučiti</a></li>
+<li class="lvl-2"><a href="#šta-je-deploy-otvaranje-radnje">Šta je deploy: otvaranje radnje</a></li>
+<li class="lvl-2"><a href="#pre-nego-što-počneš">Pre nego što počneš</a></li>
+<li class="lvl-2"><a href="#korak-1-povezivanje--vercelbootstrap">Korak 1: Povezivanje — /vercel:bootstrap</a></li>
+<li class="lvl-2"><a href="#korak-2-preview-deploy--proba-pre-javnosti">Korak 2: Preview deploy — proba pre javnosti</a></li>
+<li class="lvl-2"><a href="#korak-3-produkcija">Korak 3: Produkcija</a></li>
+<li class="lvl-2"><a href="#env-varijable-ključevi-od-stana-se-ne-lepe-na-vrata">Env varijable: ključevi od stana se ne lepe na vrata</a></li>
+<li class="lvl-2"><a href="#tvoj-domen-adresa-radnje">Tvoj domen: adresa radnje</a></li>
+<li class="lvl-2"><a href="#dve-baze-nikad-ne-testiraš-na-pravim-podacima">Dve baze: nikad ne testiraš na pravim podacima</a></li>
+<li class="lvl-2"><a href="#pre-launch-checklist-i-soft-launch">Pre-launch checklist i soft launch</a></li>
+<li class="lvl-2"><a href="#vežba">Vežba</a></li>
+<li class="lvl-2"><a href="#najčešće-greške">Najčešće greške</a></li>
+<li class="lvl-2"><a href="#kontrolna-lista">Kontrolna lista</a></li>
+<li class="lvl-2"><a href="#proveri-znanje">Proveri znanje</a></li>
+</ul></div></aside>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

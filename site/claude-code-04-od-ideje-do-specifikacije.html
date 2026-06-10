@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sr" style="--accent:#4f46e5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Modul 4: Od ideje do specifikacije — Biblije</title>
+<meta name="description" content="Claude Code Biblija — Modul 4: Od ideje do specifikacije">
+<meta property="og:title" content="Modul 4: Od ideje do specifikacije">
+<meta property="og:description" content="Claude Code Biblija — Modul 4: Od ideje do specifikacije">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%234f46e5'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('knjige-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<header class="topbar">
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Meni">☰</button>
+<a class="brand" href="index.html"><span class="dot"></span>Biblije</a>
+<span class="spacer"></span>
+<button class="icon-btn" onclick="toggleTheme()" aria-label="Promeni temu" title="Svetla / tamna tema">◐</button>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+<a href="index.html" class="home-link">← Početna</a>
+<div class="nav-group">
+<button class="nav-book"><span class="bk-dot" style="background:#4f46e5"></span>Claude Code Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="claude-code-00-uvod.html">Uvod</a></li>
+<li><a class="" href="claude-code-01-mentalni-model.html">1. Mentalni model</a></li>
+<li><a class="" href="claude-code-02-priprema-okruzenja.html">2. Priprema okruženja</a></li>
+<li><a class="" href="claude-code-03-temelji-projekta.html">3. Temelji projekta</a></li>
+<li><a class="active" href="claude-code-04-od-ideje-do-specifikacije.html">4. Od ideje do specifikacije</a></li>
+<li><a class="" href="claude-code-05-planiranje-i-arhitektura.html">5. Planiranje i arhitektura</a></li>
+<li><a class="" href="claude-code-06-ritam-razvoja.html">6. Ritam razvoja</a></li>
+<li><a class="" href="claude-code-07-autonomni-rad.html">7. Autonomni rad</a></li>
+<li><a class="" href="claude-code-08-kvalitet-i-bezbednost.html">8. Kvalitet i bezbednost</a></li>
+<li><a class="" href="claude-code-09-lansiranje.html">9. Lansiranje</a></li>
+<li><a class="" href="claude-code-10-zivot-posle-lansiranja.html">10. Život posle lansiranja</a></li>
+<li><a class="" href="claude-code-11-majstorstvo-promptovanja.html">11. Majstorstvo promptovanja</a></li>
+<li><a class="" href="claude-code-12-ekosistem.html">12. Ekosistem</a></li>
+<li><a class="" href="claude-code-13-kada-krene-naopako.html">13. Kada stvari krenu naopako</a></li>
+<li><a class="" href="claude-code-14-dodaci.html">Dodaci</a></li>
+<li><a class="" href="claude-code-15-plan-edukacije.html">Za predavače: kako iz ovog dokumenta izvesti kurs</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#0d9488"></span>Marketing Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="marketing-00-uvod.html">Uvod</a></li>
+<li><a class="" href="marketing-01-metrike.html">1. Ekonomija SaaS-a</a></li>
+<li><a class="" href="marketing-02-pozicioniranje.html">2. Pozicioniranje i poruka</a></li>
+<li><a class="" href="marketing-03-plg.html">3. Proizvod kao marketing</a></li>
+<li><a class="" href="marketing-04-petlje.html">4. Growth petlje</a></li>
+<li><a class="" href="marketing-05-organski.html">5. Organski rast u AI eri</a></li>
+<li><a class="" href="marketing-06-paid.html">6. Plaćena akvizicija</a></li>
+<li><a class="" href="marketing-07-email.html">7. Email i lifecycle</a></li>
+<li><a class="" href="marketing-08-brend.html">8. Brend</a></li>
+<li><a class="" href="marketing-09-lansiranja.html">9. Lansiranja i momentum</a></li>
+<li><a class="" href="marketing-10-eksperimenti.html">10. Eksperimentalni pogon</a></li>
+<li><a class="" href="marketing-11-brandbook.html">11. Brandbook kao algoritam</a></li>
+<li><a class="" href="marketing-12-os.html">12. Autonomni marketinški OS</a></li>
+<li><a class="" href="marketing-13-plan.html">13. Plan uvođenja</a></li>
+<li><a class="" href="marketing-14-dodaci.html">Dodatak A: Rečnik i formule metrika</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#db2777"></span>Top 5% Edukator<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="edukator-00-uvod.html">Uvod</a></li>
+<li><a class="" href="edukator-01-sedam-razlika.html">1. Sedam razlika između top 5% i ostalih 95%</a></li>
+<li><a class="" href="edukator-02-nauka-ucenja.html">2. Nauka učenja</a></li>
+<li><a class="" href="edukator-03-dizajn-transformacije.html">3. Dizajn transformacije</a></li>
+<li><a class="" href="edukator-04-umetnost-objasnjavanja.html">4. Umetnost objašnjavanja i izvođenja</a></li>
+<li><a class="" href="edukator-05-iskustvo-i-zajednica.html">5. Iskustvo polaznika i zajednica</a></li>
+<li><a class="" href="edukator-06-pozicioniranje.html">6. Pozicioniranje</a></li>
+<li><a class="" href="edukator-07-dokazi-i-brend.html">7. Dokazni motor i lični brend</a></li>
+<li><a class="" href="edukator-08-coaching-plan.html">8. Tvoj 90-dnevni plan</a></li>
+<li><a class="" href="edukator-09-tvoj-slucaj.html">9. Primena na tvoj slučaj</a></li>
+</ul></div>
+</nav>
+<div class="content">
+<div class="article-wrap"><article class="article"><div class="crumbs"><a href="index.html">Početna</a><span class="sep">/</span><span>Claude Code Biblija</span></div><h2 id="modul-4-od-ideje-do-specifikacije">Modul 4: Od ideje do specifikacije</h2>
+<p>Najskuplja greška u pravljenju digitalnog proizvoda nije bag u kodu. Najskuplja greška je savršeno izgraditi pogrešnu stvar. Možeš imati besprekoran kod, prelep dizajn i brz sajt — ako rešava problem koji niko nema, potrošio si mesece ni na šta. Zato pre prvog reda koda dolazi nešto mnogo važnije: razgovor sa samim sobom o tome šta zapravo praviš. A Claude je, kada ga pravilno usmeriš, odličan sagovornik za taj razgovor.</p>
+<h3 id="šta-ćeš-naučiti">Šta ćeš naučiti</h3>
+<ul>
+<li>Kako da nateraš Claude-a da tvoju ideju napadne, a ne da ti tapše po ramenu</li>
+<li>Kako da definišeš problem, ciljnu grupu i ključnu vrednost u jednoj rečenici</li>
+<li>Šta je MVP i kako da nemilosrdno isečeš sve što nije neophodno za prvu verziju</li>
+<li>Kako da napišeš <code>docs/spec.md</code> — dokument koji postaje ustav tvog projekta</li>
+<li>Kako da spec koristiš kao trajnu referencu u svakoj budućoj sesiji</li>
+</ul>
+<h3 id="zašto-moraš-da-tražiš-kritiku-i-zašto-je-nećeš-dobiti-besplatno">Zašto moraš da tražiš kritiku (i zašto je nećeš dobiti besplatno)</h3>
+<p>Claude je sam od sebe uslužan. Ako mu kažeš "imam ideju za aplikaciju koja povezuje vlasnike pasa sa šetačima", on će ti vratiti entuzijastičan odgovor, listu funkcionalnosti i predlog kako da počneš. To prija — i to je zamka. Dobio si navijača, a tebi treba đavolji advokat.</p>
+<p>Kritiku moraš eksplicitno da tražiš. Kao kada prijatelja pitaš "kako ti se čini moj poslovni plan?" — dobićeš "super zvuči!". Ali ako pitaš "šta je najslabija tačka ovog plana i zašto bi propao?", dobićeš odgovor koji vredi. Isto važi za Claude-a.</p>
+<p>Evo prompta koji možeš da iskopiraš i prilagodiš:</p>
+<pre><code>Imam ideju za proizvod: [opiši ideju u 2-3 rečenice].
+
+Nemoj da me hvališ i nemoj da budeš ljubazan. Ponašaj se kao
+iskusan investitor koji je video stotine propalih projekata:
+
+1. Postavi mi 10 najtežih pitanja o ovoj ideji.
+2. Reci mi šta je najrizičnije — gde će najverovatnije pući.
+3. Reci mi šta bi izbacio iz prve verzije i zašto.
+4. Reci mi ko već rešava ovaj problem i zašto bi neko prešao kod mene.
+
+Budi direktan. Više mi vredi neprijatna istina sada nego
+propao projekat za šest meseci.</code></pre>
+<p>Odgovori na tih deset pitanja — pisano, ozbiljno. Ako na tri pitanja nemaš odgovor, nisi spreman da gradiš. To nije poraz; to je jeftino otkriće. Upravo si uštedeo mesece.</p>
+<p>Ako koristiš plugin-ove (detaljno u Modulu 12), <code>product-management</code> plugin ima skill <code>brainstorm</code> koji vodi ovakav razgovor strukturirano. Ali i običan prompt iznad radi posao.</p>
+<h3 id="tri-rečenice-koje-moraš-da-znaš-napamet">Tri rečenice koje moraš da znaš napamet</h3>
+<p>Pre nego što napišeš spec, moraš da umeš da odgovoriš na tri pitanja — svako u jednoj rečenici:</p>
+<ol type="1">
+<li><strong>Problem</strong>: Šta tačno boli koga? ("Frilenseri gube sate mesečno na ručno pisanje faktura.")</li>
+<li><strong>Ciljna grupa</strong>: Ko je taj kome je dovoljno hitno da plati ili promeni naviku? ("Frilenseri u Srbiji koji izdaju 5-20 faktura mesečno.")</li>
+<li><strong>Ključna vrednost</strong>: Zašto baš tvoje rešenje, u jednoj rečenici koju razume tvoja tetka? ("Faktura gotova za 30 sekundi, automatski u skladu sa domaćim propisima.")</li>
+</ol>
+<p>Ako ne umeš da ih izgovoriš bez "i još...", "a takođe...", "pa zavisi..." — ideja još nije sazrela. Vrati se na brainstorm.</p>
+<h3 id="mvp-prvo-skejtbord-ne-polu-automobil">MVP: prvo skejtbord, ne polu-automobil</h3>
+<p>MVP (Minimum Viable Product — najmanji upotrebljiv proizvod) je prva verzija koja rešava srž problema, i ništa više. Klasična analogija: ako praviš prevozno sredstvo, MVP nije šasija automobila bez točkova — to je polu-automobil koji ne vozi i nikome ne koristi. MVP je skejtbord: ružan, jednostavan, ali te već danas preveze od tačke A do tačke B. Sledeća verzija je trotinet, pa bicikl, pa tek onda auto. U svakom koraku korisnik dobija nešto što radi.</p>
+<p>Za rezanje MVP-a iskoristi Claude-a kao nemilosrdnog urednika:</p>
+<pre><code>Evo liste svih funkcionalnosti koje zamišljam: [nalepi listu].
+
+Za svaku stavku odgovori: da li korisnik može da dobije osnovnu
+vrednost proizvoda BEZ nje? Ako može — predloži da je izbacimo
+iz prve verzije. Cilj je da prva verzija ima najviše 3 ključne
+funkcionalnosti. Budi brutalan.</code></pre>
+<p>Pravilo palca: ako prvu verziju ne možeš da opišeš u jednoj rečenici i ne vidiš je gotovu za par nedelja rada, još uvek nisi dovoljno sekao.</p>
+<h3 id="pisanje-docsspecmd--ustav-tvog-projekta">Pisanje <code>docs/spec.md</code> — ustav tvog projekta</h3>
+<p>Sada sve to pretačeš u jedan fajl: <code>docs/spec.md</code> (folder <code>docs</code> u tvom projektu, fajl u Markdown formatu — običan tekst sa naslovima, isti format kao <code>CLAUDE.md</code> iz Modula 3). Ovo je dokument kome se i ti i Claude vraćate kad god se pojavi dilema "a da dodamo i ovo?".</p>
+<p>Struktura koja se pokazala dobrom:</p>
+<pre><code># Specifikacija: [ime proizvoda]
+
+## Problem
+Jedna do tri rečenice: šta boli, koga i koliko.
+
+## Korisnik
+Ko je ciljna grupa. Konkretno: &quot;frilenseri u Srbiji koji...&quot;,
+ne &quot;svi koji žele...&quot;.
+
+## Ključna vrednost
+Jedna rečenica koju razume laik.
+
+## Funkcionalnosti
+### Mora (MVP)
+- [funkcionalnost 1 — jedna rečenica šta korisnik može da uradi]
+- [funkcionalnost 2]
+- [funkcionalnost 3]
+
+### Trebalo bi (verzija 2)
+- [stvari koje su važne, ali ne za prvi dan]
+
+### Kasnije (možda nikad)
+- [ideje koje su zanimljive, ali ih svesno odlažeš]
+
+## Šta NIJE u MVP-u
+Eksplicitna lista. Npr: &quot;Nema mobilne aplikacije. Nema više
+jezika. Nema timskih naloga.&quot;
+
+## Kriterijumi uspeha
+Merljivo: &quot;Korisnik kreira prvu fakturu za manje od 60 sekundi.&quot;
+&quot;10 ljudi koristi proizvod nedeljno mesec dana posle lansiranja.&quot;</code></pre>
+<p>Sekcija "Šta NIJE u MVP-u" je možda i najvrednija. Ona štiti od tebe samog — od trenutka u tri ujutru kad pomisliš "a da ubacim i čet?". Piše crno na belo: ne, ne sada.</p>
+<p>Ne moraš spec da pišeš sam. Daj Claude-u beleške sa brainstorma i zatraži da ti sastavi prvi nacrt po ovoj strukturi, pa ga ti doteraj. Ti si urednik i potpisnik — Claude je pisar.</p>
+<h3 id="spec-kao-trajna-referenca">Spec kao trajna referenca</h3>
+<p>Setimo se Modula 1: Claude ne pamti ništa između sesija (osim <code>CLAUDE.md</code> i memorije). Tvoj spec je način da svaka nova sesija počne sa istim razumevanjem proizvoda. Navika koja se isplati:</p>
+<pre><code>Pročitaj docs/spec.md pa mi reci kako sledeća funkcionalnost
+koju planiramo utiče na ono što tamo piše.</code></pre>
+<p>Možeš i da zamoliš Claude-a da u <code>CLAUDE.md</code> doda napomenu da spec uvek pročita na početku rada — ili jednostavno pošalji poruku koja počinje sa <code>#</code>, čime Claude tu napomenu trajno zabeleži.</p>
+<h3 id="primer-dijaloga-iz-prakse">Primer dijaloga iz prakse</h3>
+<p><strong>Ti:</strong></p>
+<pre><code>Imam ideju: aplikacija u koju ubaciš video, ona ga automatski
+transkribuje i iseče tišine i poštapalice. Za male kreatore
+sadržaja. Postavi mi 10 najtežih pitanja i reci šta bi izbacio
+iz prve verzije.</code></pre>
+<p><strong>Claude (skraćeno):</strong> "Pitanje 3: CapCut i Descript već rade nešto slično — zašto bi neko prešao kod tebe? Pitanje 7: obrada videa je skupa — ko plaća server dok je proizvod besplatan? Iz prve verzije bih izbacio: izvoz u više formata, timsku saradnju i mobilnu verziju. Zadržao bih samo: upload, transkripciju i automatsko sečenje tišina."</p>
+<p><strong>Ti reaguješ:</strong> Na pitanje 3 imaš odgovor — tvoja aplikacija radi odlično za srpski jezik, što veliki alati ne pokrivaju. To ide u spec pod "Ključna vrednost". Na pitanje 7 nemaš odgovor — beležiš ga kao rizik koji ćeš istražiti pre lansiranja. Predlog rezanja prihvataš i MVP postaje tri funkcionalnosti.</p>
+<p>Vidiš mehaniku: Claude izaziva, ti odlučuješ. Ti si direktor (Modul 0), on je oštrouman savetnik.</p>
+<h3 id="vežba">Vežba</h3>
+<ol type="1">
+<li>Uzmi svoju ideju (ili izmisli jednu za vežbu — npr. aplikacija za deljenje troškova na putovanjima).</li>
+<li>Otvori sesiju u Claude Code-u u folderu projekta i nalepi "đavolji advokat" prompt sa početka modula, sa svojom idejom.</li>
+<li>Pisano odgovori na svih 10 pitanja. Za ona na koja nemaš odgovor, napiši "RIZIK: nemam odgovor" — to su ti domaći zadaci.</li>
+<li>Zatraži MVP rezanje promptom iz ovog modula. Cilj: najviše 3 funkcionalnosti u "Mora".</li>
+<li>Zatraži od Claude-a: "Na osnovu ovog razgovora napiši nacrt <code>docs/spec.md</code> po sledećoj strukturi: problem, korisnik, ključna vrednost, funkcionalnosti (mora / trebalo bi / kasnije), šta NIJE u MVP-u, kriterijumi uspeha."</li>
+<li>Pročitaj nacrt rečenicu po rečenicu. Sve sa čime se ne slažeš — ispravi ili izbaci. Ovo je tvoj dokument.</li>
+<li>Sačuvaj fajl i potvrdi da postoji: zatraži od Claude-a da ti prikaže sadržaj <code>docs/spec.md</code>.</li>
+</ol>
+<h3 id="najčešće-greške">Najčešće greške</h3>
+<ol type="1">
+<li><strong>Tražiš mišljenje, a ne kritiku.</strong> "Šta misliš o ovoj ideji?" donosi pohvale. Rešenje: uvek eksplicitno traži najteža pitanja, rizike i razloge za neuspeh — kao u promptu iz ovog modula.</li>
+<li><strong>MVP od deset funkcionalnosti.</strong> "Sve je neophodno" znači da nisi odlučio šta je srž. Rešenje: za svaku stavku pitaj "može li korisnik da dobije osnovnu vrednost bez ovoga?" — ako može, seci.</li>
+<li><strong>Spec napisan pa zaboravljen.</strong> Posle dve nedelje gradiš nešto čega u spec-u nema. Rešenje: svaku sesiju počni sa "pročitaj <code>docs/spec.md</code>", a svaku novu ideju propusti kroz pitanje "da li ovo menja spec?".</li>
+<li><strong>Ciljna grupa "svi".</strong> Proizvod za sve je proizvod ni za koga. Rešenje: suzi dok ne zaboli — "frilenseri u Srbiji sa 5-20 faktura mesečno" je dobro; "ljudi koji rade" nije.</li>
+<li><strong>Kriterijumi uspeha bez brojeva.</strong> "Korisnici su zadovoljni" se ne može izmeriti. Rešenje: broj, vreme ili procenat — "prva faktura za manje od 60 sekundi" (princip merljivosti iz Modula 1).</li>
+</ol>
+<h3 id="kontrolna-lista">Kontrolna lista</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Claude mi je postavio 10 teških pitanja i odgovorio sam na svako (ili zabeležio rizik)</label></li>
+<li><label><input type="checkbox" />Problem, ciljnu grupu i ključnu vrednost umem da kažem u po jednoj rečenici</label></li>
+<li><label><input type="checkbox" />MVP ima najviše 3 funkcionalnosti pod "Mora"</label></li>
+<li><label><input type="checkbox" /><code>docs/spec.md</code> postoji i sadrži svih šest sekcija, uključujući "Šta NIJE u MVP-u"</label></li>
+<li><label><input type="checkbox" />Kriterijumi uspeha su merljivi (broj, vreme, procenat)</label></li>
+<li><label><input type="checkbox" />Znam da svaku sledeću sesiju počinjem sa "pročitaj <code>docs/spec.md</code>"</label></li>
+</ul>
+<h3 id="proveri-znanje">Proveri znanje</h3>
+<p><strong>1. Zašto moraš eksplicitno da tražiš kritiku od Claude-a?</strong></p>
+<p>Zato što je Claude sam od sebe uslužan i podržavajući — na neutralno pitanje vratiće ohrabrenje, a ne analizu rizika. Kritiku, teška pitanja i razloge za neuspeh dobijaš samo ako ih izričito zatražiš.</p>
+<p><strong>2. Šta znači analogija "prvo skejtbord, ne polu-automobil"?</strong></p>
+<p>Prva verzija proizvoda treba da bude mala ali upotrebljiva — da već danas rešava srž problema (skejtbord vozi), umesto da bude nedovršen komad velike vizije koji nikome ne koristi (polu-automobil ne vozi).</p>
+<p><strong>3. Čemu služi sekcija "Šta NIJE u MVP-u" i kako spec koristiš u budućim sesijama?</strong></p>
+<p>Ta sekcija je pisana brana protiv širenja obima — kada dođe iskušenje da dodaš novu funkcionalnost, dokument te podseća da je svesno odložena. Spec koristiš tako što svaku novu sesiju počneš sa "pročitaj <code>docs/spec.md</code>", jer Claude ne pamti prethodne razgovore.</p>
+<nav class="pager">
+<a class="prev" href="claude-code-03-temelji-projekta.html"><span class="lbl">← Prethodno</span><span class="ttl">3. Temelji projekta</span></a>
+<a class="next" href="claude-code-05-planiranje-i-arhitektura.html"><span class="lbl">Sledeće →</span><span class="ttl">5. Planiranje i arhitektura</span></a>
+</nav></article></div><aside class="toc"><div class="toc-inner">
+<div class="toc-title">Na ovoj strani</div><ul>
+<li class="lvl-2"><a href="#šta-ćeš-naučiti">Šta ćeš naučiti</a></li>
+<li class="lvl-2"><a href="#zašto-moraš-da-tražiš-kritiku-i-zašto-je-nećeš-dobiti-besplatno">Zašto moraš da tražiš kritiku (i zašto je nećeš dobiti besplatno)</a></li>
+<li class="lvl-2"><a href="#tri-rečenice-koje-moraš-da-znaš-napamet">Tri rečenice koje moraš da znaš napamet</a></li>
+<li class="lvl-2"><a href="#mvp-prvo-skejtbord-ne-polu-automobil">MVP: prvo skejtbord, ne polu-automobil</a></li>
+<li class="lvl-2"><a href="#pisanje-docsspecmd--ustav-tvog-projekta">Pisanje docs/spec.md — ustav tvog projekta</a></li>
+<li class="lvl-2"><a href="#spec-kao-trajna-referenca">Spec kao trajna referenca</a></li>
+<li class="lvl-2"><a href="#primer-dijaloga-iz-prakse">Primer dijaloga iz prakse</a></li>
+<li class="lvl-2"><a href="#vežba">Vežba</a></li>
+<li class="lvl-2"><a href="#najčešće-greške">Najčešće greške</a></li>
+<li class="lvl-2"><a href="#kontrolna-lista">Kontrolna lista</a></li>
+<li class="lvl-2"><a href="#proveri-znanje">Proveri znanje</a></li>
+</ul></div></aside>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

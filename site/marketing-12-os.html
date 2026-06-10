@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="sr" style="--accent:#0d9488">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Poglavlje 12: Autonomni marketinški OS — arhitektura i implementacija — Biblije</title>
+<meta name="description" content="Marketing Biblija — Poglavlje 12: Autonomni marketinški OS — arhitektura i implementacija">
+<meta property="og:title" content="Poglavlje 12: Autonomni marketinški OS — arhitektura i implementacija">
+<meta property="og:description" content="Marketing Biblija — Poglavlje 12: Autonomni marketinški OS — arhitektura i implementacija">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d9488'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('knjige-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<header class="topbar">
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Meni">☰</button>
+<a class="brand" href="index.html"><span class="dot"></span>Biblije</a>
+<span class="spacer"></span>
+<button class="icon-btn" onclick="toggleTheme()" aria-label="Promeni temu" title="Svetla / tamna tema">◐</button>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+<a href="index.html" class="home-link">← Početna</a>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#4f46e5"></span>Claude Code Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="claude-code-00-uvod.html">Uvod</a></li>
+<li><a class="" href="claude-code-01-mentalni-model.html">1. Mentalni model</a></li>
+<li><a class="" href="claude-code-02-priprema-okruzenja.html">2. Priprema okruženja</a></li>
+<li><a class="" href="claude-code-03-temelji-projekta.html">3. Temelji projekta</a></li>
+<li><a class="" href="claude-code-04-od-ideje-do-specifikacije.html">4. Od ideje do specifikacije</a></li>
+<li><a class="" href="claude-code-05-planiranje-i-arhitektura.html">5. Planiranje i arhitektura</a></li>
+<li><a class="" href="claude-code-06-ritam-razvoja.html">6. Ritam razvoja</a></li>
+<li><a class="" href="claude-code-07-autonomni-rad.html">7. Autonomni rad</a></li>
+<li><a class="" href="claude-code-08-kvalitet-i-bezbednost.html">8. Kvalitet i bezbednost</a></li>
+<li><a class="" href="claude-code-09-lansiranje.html">9. Lansiranje</a></li>
+<li><a class="" href="claude-code-10-zivot-posle-lansiranja.html">10. Život posle lansiranja</a></li>
+<li><a class="" href="claude-code-11-majstorstvo-promptovanja.html">11. Majstorstvo promptovanja</a></li>
+<li><a class="" href="claude-code-12-ekosistem.html">12. Ekosistem</a></li>
+<li><a class="" href="claude-code-13-kada-krene-naopako.html">13. Kada stvari krenu naopako</a></li>
+<li><a class="" href="claude-code-14-dodaci.html">Dodaci</a></li>
+<li><a class="" href="claude-code-15-plan-edukacije.html">Za predavače: kako iz ovog dokumenta izvesti kurs</a></li>
+</ul></div>
+<div class="nav-group">
+<button class="nav-book"><span class="bk-dot" style="background:#0d9488"></span>Marketing Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="marketing-00-uvod.html">Uvod</a></li>
+<li><a class="" href="marketing-01-metrike.html">1. Ekonomija SaaS-a</a></li>
+<li><a class="" href="marketing-02-pozicioniranje.html">2. Pozicioniranje i poruka</a></li>
+<li><a class="" href="marketing-03-plg.html">3. Proizvod kao marketing</a></li>
+<li><a class="" href="marketing-04-petlje.html">4. Growth petlje</a></li>
+<li><a class="" href="marketing-05-organski.html">5. Organski rast u AI eri</a></li>
+<li><a class="" href="marketing-06-paid.html">6. Plaćena akvizicija</a></li>
+<li><a class="" href="marketing-07-email.html">7. Email i lifecycle</a></li>
+<li><a class="" href="marketing-08-brend.html">8. Brend</a></li>
+<li><a class="" href="marketing-09-lansiranja.html">9. Lansiranja i momentum</a></li>
+<li><a class="" href="marketing-10-eksperimenti.html">10. Eksperimentalni pogon</a></li>
+<li><a class="" href="marketing-11-brandbook.html">11. Brandbook kao algoritam</a></li>
+<li><a class="active" href="marketing-12-os.html">12. Autonomni marketinški OS</a></li>
+<li><a class="" href="marketing-13-plan.html">13. Plan uvođenja</a></li>
+<li><a class="" href="marketing-14-dodaci.html">Dodatak A: Rečnik i formule metrika</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#db2777"></span>Top 5% Edukator<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="edukator-00-uvod.html">Uvod</a></li>
+<li><a class="" href="edukator-01-sedam-razlika.html">1. Sedam razlika između top 5% i ostalih 95%</a></li>
+<li><a class="" href="edukator-02-nauka-ucenja.html">2. Nauka učenja</a></li>
+<li><a class="" href="edukator-03-dizajn-transformacije.html">3. Dizajn transformacije</a></li>
+<li><a class="" href="edukator-04-umetnost-objasnjavanja.html">4. Umetnost objašnjavanja i izvođenja</a></li>
+<li><a class="" href="edukator-05-iskustvo-i-zajednica.html">5. Iskustvo polaznika i zajednica</a></li>
+<li><a class="" href="edukator-06-pozicioniranje.html">6. Pozicioniranje</a></li>
+<li><a class="" href="edukator-07-dokazi-i-brend.html">7. Dokazni motor i lični brend</a></li>
+<li><a class="" href="edukator-08-coaching-plan.html">8. Tvoj 90-dnevni plan</a></li>
+<li><a class="" href="edukator-09-tvoj-slucaj.html">9. Primena na tvoj slučaj</a></li>
+</ul></div>
+</nav>
+<div class="content">
+<div class="article-wrap"><article class="article"><div class="crumbs"><a href="index.html">Početna</a><span class="sep">/</span><span>Marketing Biblija</span></div><h2 id="poglavlje-12-autonomni-marketinški-os--arhitektura-i-implementacija">Poglavlje 12: Autonomni marketinški OS — arhitektura i implementacija</h2>
+<p>Sve dosad — metrike, pozicioniranje, petlje, kanali, eksperimenti, brandbook — bili su delovi. Ovo poglavlje ih sklapa u mašinu. Autonomni marketinški OS je sistem u kom AI agenti po cron rasporedu rade proizvodnju, analizu i nadzor; brandbook iz Poglavlja 11 im je ustav; a ti — čovek — držiš kapije objavljivanja. Ništa ne izlazi u javnost bez tvog potpisa. Ali sve PRE tog potpisa radi samo.</p>
+<p>Da raščistimo odmah: ovo nije "AI radi marketing umesto tebe". To je hype verzija koja se završava generičkim sadržajem koji platforme i čitaoci ignorišu (videli smo u Poglavlju 5 — AI je komodifikovao prosečan sadržaj). Ovo je verzija praktičara: ti i dalje odlučuješ ŠTA i ZAŠTO; sistem radi rutinski deo KAKO — i to svakog dana, bez tvoje radne memorije kao uskog grla.</p>
+<h3 id="šta-ćeš-naučiti">Šta ćeš naučiti</h3>
+<ul>
+<li>Arhitekturu OS-a od 5 komponenti: mozak, čula, ruke, srce, kapije</li>
+<li>Tačnu repo strukturu <code>marketing-os/</code> koju kopiraš i koristiš</li>
+<li>Dva kompletna prompta rutina (nedeljni izveštaj metrika; nacrti objava) spremna za upotrebu</li>
+<li>Tabelu nivoa autonomije: šta agent sme sam, šta uz QA agenta, šta nikad bez tebe</li>
+<li>Kill-switch, nedeljni audit i metrike kojima meriš sam OS</li>
+</ul>
+<h3 id="arhitektura-organizam-sa-pet-komponenti">Arhitektura: organizam sa pet komponenti</h3>
+<p>OS najlakše razumeš kao organizam. Pet komponenti, svaka sa jednom odgovornošću:</p>
+<table>
+<thead>
+<tr>
+<th>Komponenta</th>
+<th>Analogija</th>
+<th>Šta je u praksi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. MOZAK</td>
+<td>dugoročna memorija i vrednosti</td>
+<td><code>brandbook/</code> + <code>strategija/</code> — fajlovi koje svaka rutina učitava PRVE</td>
+</tr>
+<tr>
+<td>2. ČULA</td>
+<td>šta organizam opaža</td>
+<td><code>data/</code> — izveštaji metrika, analitika sajta, recenzije, pominjanja, konkurencija</td>
+</tr>
+<tr>
+<td>3. RUKE</td>
+<td>šta proizvodi</td>
+<td>agenti-rutine: nacrti objava i mejlova, SEO stranice, izveštaji, analize</td>
+</tr>
+<tr>
+<td>4. SRCE</td>
+<td>ritam koji sve pokreće</td>
+<td>cron raspored: <code>/schedule</code> rutine, GitHub Actions ili <code>claude -p</code> iz cron-a</td>
+</tr>
+<tr>
+<td>5. KAPIJE</td>
+<td>svesna odluka</td>
+<td>TI — jedina instanca koja pušta sadržaj u javnost</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1. MOZAK — <code>brandbook/</code> + <code>strategija/</code>.</strong> Brandbook (7 fajlova iz Poglavlja 11) definiše ko si, kako zvučiš i šta nikad ne radiš. <code>strategija/</code> dodaje ono što se menja kvartalno: ciljevi kvartala, content stubovi (3-5 tema koje sistematski pokrivaš), ICP. Pravilo je isto kao CLAUDE.md obrazac iz razvoja softvera — fajl koji se učitava na početku svake sesije i daje agentu trajni kontekst. Zato SVAKI prompt rutine počinje istom rečenicom: "Prvo pročitaj sve fajlove u brandbook/ i strategija/." Bez toga dobijaš generičkog agenta sa amnezijom.</p>
+<p><strong>2. ČULA — <code>data/</code>.</strong> Fajlovi koje rutine pune i čitaju: nedeljni izvoz metrika (MRR, churn, aktivacija — kontrolna tabla iz Poglavlja 1), izvoz iz analitike sajta, nove G2/Capterra recenzije, pominjanja brenda, beleške o konkurenciji. Format: markdown ili CSV, jedan fajl po izvoru, sa datumom. Ako alat ima MCP konektor (Slack, Notion, Gmail…), agent može da čita direktno; ako nema, ti ili skripta jednom nedeljno ubacite izvoz u <code>data/</code>. Bitno je da čula postoje — agent koji ne vidi brojke piše napamet.</p>
+<p><strong>3. RUKE — agenti-rutine.</strong> Svaka rutina je jedan prompt sa jasnim ulazom (koje fajlove čita) i izlazom (koji fajl piše i gde). Rutine proizvode NACRTE i ANALIZE, nikad objave. Claude Code čita i piše fajlove, pokreće komande i koristi paralelne subagente — što znači da jedna rutina može npr. paralelno da analizira tri konkurenta pa spoji nalaze.</p>
+<p><strong>4. SRCE — cron ritam.</strong> Tri načina da rutina kuca:</p>
+<ul>
+<li><code>/schedule</code> — Routines: zakazani cloud agenti koji rade po cron rasporedu i kad ti je računar ugašen. Najjednostavniji put za solo osnivača.</li>
+<li>GitHub Actions — automatizacija vezana za repo: na svaki push/PR ili po cron rasporedu. Prirodno ako ti marketing-os već živi na GitHubu.</li>
+<li><code>claude -p "..."</code> — neinteraktivno pokretanje jednog zadatka, pozivaš ga iz bilo kog cron sistema (server, lokalni cron).</li>
+<li>Bonus za rad u sesiji: <code>/loop</code> ponavlja zadatak unutar otvorene sesije (fiksni interval ili dinamički) — korisno za dan lansiranja, ne za trajni pogon.</li>
+</ul>
+<p>Nedeljni raspored koji preporučujem kao polaznu tačku:</p>
+<table>
+<thead>
+<tr>
+<th>Kad</th>
+<th>Rutina</th>
+<th>Prompt</th>
+<th>Izlaz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pon 07:00</td>
+<td>Nedeljni izveštaj metrika + predlozi</td>
+<td>Rutina 1 (niže)</td>
+<td><code>izvestaji/YYYY-MM-DD-nedeljni.md</code></td>
+</tr>
+<tr>
+<td>uto 08:00</td>
+<td>Nacrti sadržaja po content planu</td>
+<td>Rutina 2 (niže)</td>
+<td>3 fajla u <code>content/nacrti/</code></td>
+</tr>
+<tr>
+<td>sre 09:00</td>
+<td>Competitor scan</td>
+<td>Dodatak B9</td>
+<td><code>data/konkurencija/YYYY-MM-DD.md</code></td>
+</tr>
+<tr>
+<td>čet 08:00</td>
+<td>Nacrti sadržaja (druga tura)</td>
+<td>Rutina 2 (niže)</td>
+<td>3 fajla u <code>content/nacrti/</code></td>
+</tr>
+<tr>
+<td>pet 16:00</td>
+<td>Retrospektiva eksperimenata + predlozi za sledeću nedelju</td>
+<td>Dodatak B10</td>
+<td>dopuna <code>eksperimenti/log.md</code> + predlozi u <code>eksperimenti/backlog.md</code></td>
+</tr>
+<tr>
+<td>1. u mesecu</td>
+<td>AEO provera citiranosti (Poglavlje 5) + brandbook review</td>
+<td>Dodatak B11</td>
+<td>izveštaj + predlozi izmena brandbooka</td>
+</tr>
+</tbody>
+</table>
+<p><strong>5. KAPIJE — ti.</strong> Jedina komponenta koja ne može da se automatizuje, i to je namerno. Detalji u tabeli autonomije niže.</p>
+<h3 id="repo-struktura">Repo struktura</h3>
+<pre><code>marketing-os/
+├── brandbook/              # 7 fajlova iz Poglavlja 11 — ustav
+├── strategija/
+│   ├── ciljevi-kvartala.md
+│   ├── content-plan.md     # stubovi, formati, ritam
+│   └── icp.md
+├── data/                   # ČULA — rutine pune i čitaju
+│   ├── metrike/            # nedeljni izvozi (MRR, churn, aktivacija…)
+│   ├── analitika-sajta/
+│   ├── recenzije/
+│   ├── pominjanja/
+│   └── konkurencija/
+├── content/
+│   ├── ideje/              # backlog ideja (ti + rutine dopisuju)
+│   ├── nacrti/             # RUKE pišu ovde
+│   ├── na-pregledu/        # prošlo brand-QA agenta, čeka TEBE
+│   ├── odobreno/           # tvoj potpis — spremno za objavu
+│   ├── objavljeno/         # arhiva sa datumom i kanalom
+│   └── emails/             # lifecycle sekvence (Poglavlje 7)
+├── eksperimenti/
+│   ├── backlog.md          # ICE backlog ideja (Poglavlje 10)
+│   └── log.md              # hipoteze + rezultati (Poglavlje 10)
+└── izvestaji/              # nedeljni i mesečni izveštaji</code></pre>
+<p>Folderi u <code>content/</code> su mašina stanja: fajl se kreće samo udesno (nacrti → na-pregledu → odobreno → objavljeno) i svaki prelaz ima jasnog vlasnika.</p>
+<h3 id="tok-sadržaja-od-nacrta-do-objave">Tok sadržaja: od nacrta do objave</h3>
+<ol type="1">
+<li><strong>Rutina piše u <code>nacrti/</code></strong> — po content planu, sa frontmatter zaglavljem (datum, stub, kanal, ciljna metrika).</li>
+<li><strong>Brand-QA agent</strong> — drugi, nezavisan agent kao prva kontrola. Ocenjuje nacrt protiv brandbooka (glas, zabranjene fraze, tvrdnje bez izvora, poziv na akciju) i vraća isključivo JSON sa ocenom i poljem <code>prolaz</code> — prompt je u Dodatku B4; QA agent sam ne pomera fajlove i ne prepravlja nacrt. Fajlove pomera omotač-rutina od par linija koja pozove B4 pa postupi po polju <code>prolaz</code>: <code>true</code> → premešta nacrt u <code>na-pregledu/</code> i upiše ocenu u frontmatter; <code>false</code> → fajl ostaje u <code>nacrti/</code> uz dopisan blok "QA: razlozi", pa rutina sledeći put ima taj feedback.</li>
+<li><strong>TI pregledaš <code>na-pregledu/</code></strong> — čitaš, popravljaš ili odbijaš. Odobreno premestaš u <code>odobreno/</code>. Ovo je kapija — nepreskočiva.</li>
+<li><strong>Objava</strong> — ručno ili kroz alat za zakazivanje objava, ali TEK posle tvog odobrenja. Fajl ide u <code>objavljeno/</code> sa datumom i linkom.</li>
+</ol>
+<p>❌ Pogrešno: agent ima pristup nalozima i objavljuje direktno "jer je brže". Prvi halucinirani benchmark ili pogrešan ton u javnosti košta te više poverenja nego što su sve uštede vremena vredele. ✅ Ispravno: agent staje na <code>na-pregledu/</code>. Tvoj pregled traje 10 minuta dnevno, jer QA agent već odradi prvo sito.</p>
+<h3 id="rutina-1-nedeljni-izveštaj-metrika-kompletan-prompt">Rutina 1: nedeljni izveštaj metrika (kompletan prompt)</h3>
+<pre><code>Prvo pročitaj sve fajlove u brandbook/ i strategija/.
+
+Zatim pročitaj sve fajlove iz data/metrike/ i data/analitika-sajta/
+za poslednjih 14 dana, i eksperimenti/backlog.md i eksperimenti/log.md.
+
+Napiši nedeljni izveštaj u izvestaji/YYYY-MM-DD-nedeljni.md sa strukturom:
+
+1. BROJKE: tabela ključnih metrika (north star, MRR, novi korisnici,
+   aktivacija, churn) — ova nedelja vs prošla, sa % promene.
+   Koristi ISKLJUČIVO brojke iz data/ fajlova. Ako podatak nedostaje,
+   napiši &quot;nema podatka&quot; — NIKAD ne procenjuj napamet.
+2. SIGNALI: 3 najvažnije promene i tvoja hipoteza zašto su se desile,
+   svaka vezana za konkretan broj.
+3. EKSPERIMENTI: status tekućih iz eksperimenti/log.md
+   (hipoteza, metrika odluke, dosadašnji rezultat).
+4. PREDLOZI: tačno 3 predloga za sledeću nedelju, svaki sa ICE ocenom
+   (Impact × Confidence × Ease) i naznakom koji cilj iz
+   strategija/ciljevi-kvartala.md podržava.
+
+Ton: činjenično, bez ulepšavanja — loš broj je loš broj.
+Tvoj posao se završava pisanjem fajla. Ne šalješ, ne objavljuješ ništa.</code></pre>
+<h3 id="rutina-2-nacrti-objava-po-content-planu-kompletan-prompt">Rutina 2: nacrti objava po content planu (kompletan prompt)</h3>
+<pre><code>Prvo pročitaj sve fajlove u brandbook/ i strategija/.
+
+Zatim pročitaj strategija/content-plan.md, content/ideje/
+i poslednja 2 fajla iz izvestaji/ (za sveže brojke i uglove).
+
+Napiši 3 nacrta objava za [kanal] po content planu:
+- svaki nacrt pokriva DRUGI content stub iz plana
+- svaki kreće od stvarnog podatka, primera ili lekcije iz izvestaji/
+  ili data/ — nijedan nacrt od opšteg znanja
+- glas i format strogo po brandbook/ (ton, dužina, zabranjene fraze,
+  struktura otvaranja)
+- ako za neki stub nemaš stvaran podatak ili primer, NE piši taj
+  nacrt — umesto njega dodaj stavku u content/ideje/ sa opisom
+  šta nedostaje
+
+Svaki nacrt sačuvaj kao poseban fajl u content/nacrti/
+sa imenom YYYY-MM-DD-[stub]-[tema].md i frontmatter poljima:
+kanal, stub, ciljna_metrika, izvor_podatka.
+
+NIKAD ne objavljuj i ne šalji ništa — tvoj posao se završava
+u content/nacrti/.</code></pre>
+<p>Oba prompta zakazuješ kroz <code>/schedule</code> (rade i kad je računar ugašen), GitHub Actions ili <code>claude -p</code> iz cron-a — sadržaj prompta je isti.</p>
+<h3 id="nivoi-autonomije-šta-sme-samo-šta-nikad">Nivoi autonomije: šta sme samo, šta nikad</h3>
+<table>
+<thead>
+<tr>
+<th>Nivo</th>
+<th>Šta obuhvata</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POTPUNO SAMO</td>
+<td>analiza podataka, izveštaji, nacrti sadržaja, monitoring (recenzije, pominjanja, konkurencija), interni predlozi</td>
+</tr>
+<tr>
+<td>UZ QA AGENTA</td>
+<td>meta opisi stranica, A/B varijante naslova — niske posledice, visok volumen</td>
+</tr>
+<tr>
+<td>NIKAD BEZ ČOVEKA</td>
+<td>javno objavljivanje bilo čega; odgovori na recenzije i krizne situacije; promene cena; bilo kakva obećanja korisnicima</td>
+</tr>
+</tbody>
+</table>
+<p>Logika je jednostavna: autonomija raste sa reverzibilnošću. Interni izveštaj sa greškom obrišeš; javno obećanje korisniku ne možeš. Pricing posebno — to je najpotcenjenija poluga rasta (ProfitWell analize, detaljno u Poglavlju 1) i upravo zato NIKAD nije agentova odluka.</p>
+<h3 id="kill-switch-i-nedeljni-audit">Kill-switch i nedeljni audit</h3>
+<p><strong>Kill-switch.</strong> Moraš moći da pauziraš sve rutine jednim potezom. Dva sloja:</p>
+<ol type="1">
+<li>Isključi zakazane rutine u <code>/schedule</code> (odnosno onemogući cron workflow ako koristiš GitHub Actions).</li>
+<li>Dodaj u svaki prompt prvu liniju odbrane: "Ako u korenu repo-a postoji fajl <code>PAUZA</code>, odmah prekini bez pisanja ijednog fajla." Onda je <code>touch PAUZA</code> tvoje crveno dugme — radi čak i ako si negde zaboravio jedan zakazani posao.</li>
+</ol>
+<p>Kada povlačiš dugme: agent počne da halucinira brojke, ton ode van brandbooka dva puta zaredom, ili se desi bilo šta javno neprijatno. Pauziraj, ispravi uzrok u brandbooku ili promptu, pa tek onda ponovo pusti.</p>
+<p><strong>Nedeljni audit (1 sat, npr. petak posle retrospektive).</strong> Pregledaš: šta je OS proizveo, šta si odbio i — ključno — ZAŠTO si odbio. Svako "zašto" se vraća u brandbook kao novo pravilo: odbio si nacrt jer zvuči prodajno-napadno → u <code>brandbook/04-glas-i-ton.md</code> ide nova zabranjena konstrukcija sa ❌/✅ primerom. To je mehanizam učenja: OS koji posle svakog odbijanja postaje precizniji. Bez audita, odbijaš iste greške svake nedelje i sistem stagnira.</p>
+<h3 id="metrike-samog-os-a">Metrike samog OS-a</h3>
+<p>OS je proizvod — meri ga kao proizvod:</p>
+<table>
+<thead>
+<tr>
+<th>Metrika</th>
+<th>Šta govori</th>
+<th>Trend koji želiš</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acceptance rate nacrta</td>
+<td>% nacrta koje odobriš bez većih izmena</td>
+<td>raste iz nedelje u nedelju (dokaz da audit-petlja radi)</td>
+</tr>
+<tr>
+<td>Output / nedelja</td>
+<td>broj nacrta, izveštaja, analiza</td>
+<td>stabilan i predvidiv, ne maksimalan</td>
+</tr>
+<tr>
+<td>Tvoje vreme / nedelja</td>
+<td>sati na pregled + audit</td>
+<td>pada ka ~1-2h, ne ka nuli</td>
+</tr>
+</tbody>
+</table>
+<p>Tvoje vreme ne ide na nulu namerno — kapija si ti. Ako padne na nulu, nemaš autonomni OS nego neispitan autopilot. I podsetnik: Kohavijev nalaz o trećinama (Poglavlje 10) važi i za predloge tvog OS-a — zato predlozi iz nedeljnog izveštaja idu u eksperiment-log sa metrikom odluke, ne pravo u realizaciju.</p>
+<h3 id="primena-odmah">Primena odmah</h3>
+<p>Postavi skeleton i pusti prvu rutinu — danas, za manje od sat vremena:</p>
+<ol type="1">
+<li>Napravi repo <code>marketing-os/</code> sa strukturom iz code bloka iznad (prazni folderi + <code>.gitkeep</code>).</li>
+<li>Ubaci brandbook iz Poglavlja 11 u <code>brandbook/</code> i napiši <code>strategija/ciljevi-kvartala.md</code> (3 cilja, po jedna metrika svaki).</li>
+<li>Ubaci u <code>data/metrike/</code> jedan ručni izvoz svojih trenutnih brojki (markdown tabela je dovoljna).</li>
+<li>Preseli fajlove koje si već napravio kroz ranija poglavlja na njihova mesta u repou:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Fajl iz ranijeg poglavlja</th>
+<th>Novo mesto u <code>marketing-os/</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pozicioniranje.md</code> (Poglavlje 2)</td>
+<td><code>brandbook/03-pozicioniranje.md</code></td>
+</tr>
+<tr>
+<td><code>metrike.md</code> (Poglavlje 1)</td>
+<td><code>data/metrike/</code></td>
+</tr>
+<tr>
+<td><code>petlja-01.md</code> (Poglavlje 4) i <code>paid-test-plan.md</code> (Poglavlje 6)</td>
+<td><code>eksperimenti/</code></td>
+</tr>
+<tr>
+<td><code>emails/activation-sequence.md</code> (Poglavlje 7)</td>
+<td><code>content/emails/</code></td>
+</tr>
+<tr>
+<td><code>plan-12-nedelja.md</code> (Poglavlje 13)</td>
+<td>koren repo-a</td>
+</tr>
+</tbody>
+</table>
+<ol start="5" type="1">
+<li>Zakaži Rutinu 1 (nedeljni izveštaj) kroz <code>/schedule</code> za ponedeljak 07:00 — prompt prepiši doslovno odozgo.</li>
+<li>Pusti je da radi nedelju dana. Ne diraj ništa.</li>
+</ol>
+<p><strong>Deliverable:</strong> repo + prvi automatski generisan <code>izvestaji/</code> fajl sledećeg ponedeljka. Tek kad izveštajna rutina radi pouzdano dve nedelje, dodaješ content rutinu — redosled uvođenja po nedeljama je tema Poglavlja 13.</p>
+<h3 id="najčešće-greške">Najčešće greške</h3>
+<ol type="1">
+<li><strong>Agent sa pristupom objavljivanju.</strong> "Samo ovaj put direktno" je početak kraja — jedna halucinirana brojka u javnoj objavi ruši poverenje koje gradiš mesecima. Rešenje: tehnički onemogući — agent piše samo u repo, kredencijale za objavu drži van njegovog domašaja.</li>
+<li><strong>Rutine bez mozga.</strong> Prompt koji ne počinje čitanjem brandbooka i strategije proizvodi generički sadržaj koji platforme i čitaoci ignorišu. Rešenje: prva rečenica svakog prompta je učitavanje konteksta — bez izuzetka.</li>
+<li><strong>Sve rutine odjednom.</strong> Šest rutina prve nedelje = šest izvora grešaka koje ne stižeš da pregledaš, pa odustaneš od celog sistema. Rešenje: jedna rutina, dve nedelje stabilnog rada, pa sledeća (plan u Poglavlju 13).</li>
+<li><strong>Audit se preskače.</strong> Bez vraćanja "zašto sam odbio" u brandbook, acceptance rate stoji u mestu i pregledanje te košta isto kao prve nedelje. Rešenje: audit je zakazan blok u kalendaru, 1h, ne "kad stignem".</li>
+<li><strong>OS bez čula.</strong> Rutine koje ne čitaju sveže podatke iz <code>data/</code> pišu iz opšteg znanja — uglađeno, netačno, beskorisno. Rešenje: pravilo u promptu "ako podatak ne postoji u data/, napiši da nedostaje" + nedeljni ritual punjenja <code>data/</code>.</li>
+</ol>
+<h3 id="kontrolna-lista">Kontrolna lista</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Repo <code>marketing-os/</code> postoji sa svim folderima iz strukture (<code>brandbook/</code>, <code>strategija/</code>, <code>data/</code>, <code>content/</code>, <code>eksperimenti/</code>, <code>izvestaji/</code>)</label></li>
+<li><label><input type="checkbox" /><code>brandbook/</code> i <code>strategija/</code> popunjeni; svaki prompt rutine ih učitava prvi</label></li>
+<li><label><input type="checkbox" /><code>data/</code> ima bar jedan svež izvoz metrika (ne stariji od nedelju dana)</label></li>
+<li><label><input type="checkbox" />Rutina 1 (nedeljni izveštaj) zakazana i proizvela bar jedan izveštaj</label></li>
+<li><label><input type="checkbox" />Brand-QA agent stoji između <code>nacrti/</code> i <code>na-pregledu/</code></label></li>
+<li><label><input type="checkbox" />Nijedan agent nema kredencijale za objavljivanje — kapija si ti</label></li>
+<li><label><input type="checkbox" />Kill-switch testiran: <code>PAUZA</code> fajl + isključenje zakazanih rutina</label></li>
+<li><label><input type="checkbox" />Nedeljni audit (1h) u kalendaru; svako "zašto odbijeno" ide u brandbook</label></li>
+<li><label><input type="checkbox" />Pratiš acceptance rate, output/nedelja i svoje vreme/nedelja</label></li>
+</ul>
+<nav class="pager">
+<a class="prev" href="marketing-11-brandbook.html"><span class="lbl">← Prethodno</span><span class="ttl">11. Brandbook kao algoritam</span></a>
+<a class="next" href="marketing-13-plan.html"><span class="lbl">Sledeće →</span><span class="ttl">13. Plan uvođenja</span></a>
+</nav></article></div><aside class="toc"><div class="toc-inner">
+<div class="toc-title">Na ovoj strani</div><ul>
+<li class="lvl-2"><a href="#šta-ćeš-naučiti">Šta ćeš naučiti</a></li>
+<li class="lvl-2"><a href="#arhitektura-organizam-sa-pet-komponenti">Arhitektura: organizam sa pet komponenti</a></li>
+<li class="lvl-2"><a href="#repo-struktura">Repo struktura</a></li>
+<li class="lvl-2"><a href="#tok-sadržaja-od-nacrta-do-objave">Tok sadržaja: od nacrta do objave</a></li>
+<li class="lvl-2"><a href="#rutina-1-nedeljni-izveštaj-metrika-kompletan-prompt">Rutina 1: nedeljni izveštaj metrika (kompletan prompt)</a></li>
+<li class="lvl-2"><a href="#rutina-2-nacrti-objava-po-content-planu-kompletan-prompt">Rutina 2: nacrti objava po content planu (kompletan prompt)</a></li>
+<li class="lvl-2"><a href="#nivoi-autonomije-šta-sme-samo-šta-nikad">Nivoi autonomije: šta sme samo, šta nikad</a></li>
+<li class="lvl-2"><a href="#kill-switch-i-nedeljni-audit">Kill-switch i nedeljni audit</a></li>
+<li class="lvl-2"><a href="#metrike-samog-os-a">Metrike samog OS-a</a></li>
+<li class="lvl-2"><a href="#primena-odmah">Primena odmah</a></li>
+<li class="lvl-2"><a href="#najčešće-greške">Najčešće greške</a></li>
+<li class="lvl-2"><a href="#kontrolna-lista">Kontrolna lista</a></li>
+</ul></div></aside>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

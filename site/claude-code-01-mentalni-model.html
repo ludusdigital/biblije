@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sr" style="--accent:#4f46e5">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Modul 1: Mentalni model — kako Claude Code „razmišlja&quot; — Biblije</title>
+<meta name="description" content="Claude Code Biblija — Modul 1: Mentalni model — kako Claude Code „razmišlja&quot;">
+<meta property="og:title" content="Modul 1: Mentalni model — kako Claude Code „razmišlja&quot;">
+<meta property="og:description" content="Claude Code Biblija — Modul 1: Mentalni model — kako Claude Code „razmišlja&quot;">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%234f46e5'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('knjige-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<header class="topbar">
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Meni">☰</button>
+<a class="brand" href="index.html"><span class="dot"></span>Biblije</a>
+<span class="spacer"></span>
+<button class="icon-btn" onclick="toggleTheme()" aria-label="Promeni temu" title="Svetla / tamna tema">◐</button>
+</header>
+<div class="backdrop" id="backdrop"></div>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+<a href="index.html" class="home-link">← Početna</a>
+<div class="nav-group">
+<button class="nav-book"><span class="bk-dot" style="background:#4f46e5"></span>Claude Code Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="claude-code-00-uvod.html">Uvod</a></li>
+<li><a class="active" href="claude-code-01-mentalni-model.html">1. Mentalni model</a></li>
+<li><a class="" href="claude-code-02-priprema-okruzenja.html">2. Priprema okruženja</a></li>
+<li><a class="" href="claude-code-03-temelji-projekta.html">3. Temelji projekta</a></li>
+<li><a class="" href="claude-code-04-od-ideje-do-specifikacije.html">4. Od ideje do specifikacije</a></li>
+<li><a class="" href="claude-code-05-planiranje-i-arhitektura.html">5. Planiranje i arhitektura</a></li>
+<li><a class="" href="claude-code-06-ritam-razvoja.html">6. Ritam razvoja</a></li>
+<li><a class="" href="claude-code-07-autonomni-rad.html">7. Autonomni rad</a></li>
+<li><a class="" href="claude-code-08-kvalitet-i-bezbednost.html">8. Kvalitet i bezbednost</a></li>
+<li><a class="" href="claude-code-09-lansiranje.html">9. Lansiranje</a></li>
+<li><a class="" href="claude-code-10-zivot-posle-lansiranja.html">10. Život posle lansiranja</a></li>
+<li><a class="" href="claude-code-11-majstorstvo-promptovanja.html">11. Majstorstvo promptovanja</a></li>
+<li><a class="" href="claude-code-12-ekosistem.html">12. Ekosistem</a></li>
+<li><a class="" href="claude-code-13-kada-krene-naopako.html">13. Kada stvari krenu naopako</a></li>
+<li><a class="" href="claude-code-14-dodaci.html">Dodaci</a></li>
+<li><a class="" href="claude-code-15-plan-edukacije.html">Za predavače: kako iz ovog dokumenta izvesti kurs</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#0d9488"></span>Marketing Biblija<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="marketing-00-uvod.html">Uvod</a></li>
+<li><a class="" href="marketing-01-metrike.html">1. Ekonomija SaaS-a</a></li>
+<li><a class="" href="marketing-02-pozicioniranje.html">2. Pozicioniranje i poruka</a></li>
+<li><a class="" href="marketing-03-plg.html">3. Proizvod kao marketing</a></li>
+<li><a class="" href="marketing-04-petlje.html">4. Growth petlje</a></li>
+<li><a class="" href="marketing-05-organski.html">5. Organski rast u AI eri</a></li>
+<li><a class="" href="marketing-06-paid.html">6. Plaćena akvizicija</a></li>
+<li><a class="" href="marketing-07-email.html">7. Email i lifecycle</a></li>
+<li><a class="" href="marketing-08-brend.html">8. Brend</a></li>
+<li><a class="" href="marketing-09-lansiranja.html">9. Lansiranja i momentum</a></li>
+<li><a class="" href="marketing-10-eksperimenti.html">10. Eksperimentalni pogon</a></li>
+<li><a class="" href="marketing-11-brandbook.html">11. Brandbook kao algoritam</a></li>
+<li><a class="" href="marketing-12-os.html">12. Autonomni marketinški OS</a></li>
+<li><a class="" href="marketing-13-plan.html">13. Plan uvođenja</a></li>
+<li><a class="" href="marketing-14-dodaci.html">Dodatak A: Rečnik i formule metrika</a></li>
+</ul></div>
+<div class="nav-group collapsed">
+<button class="nav-book"><span class="bk-dot" style="background:#db2777"></span>Top 5% Edukator<span class="chev">▼</span></button>
+<ul class="chapters">
+<li><a class="" href="edukator-00-uvod.html">Uvod</a></li>
+<li><a class="" href="edukator-01-sedam-razlika.html">1. Sedam razlika između top 5% i ostalih 95%</a></li>
+<li><a class="" href="edukator-02-nauka-ucenja.html">2. Nauka učenja</a></li>
+<li><a class="" href="edukator-03-dizajn-transformacije.html">3. Dizajn transformacije</a></li>
+<li><a class="" href="edukator-04-umetnost-objasnjavanja.html">4. Umetnost objašnjavanja i izvođenja</a></li>
+<li><a class="" href="edukator-05-iskustvo-i-zajednica.html">5. Iskustvo polaznika i zajednica</a></li>
+<li><a class="" href="edukator-06-pozicioniranje.html">6. Pozicioniranje</a></li>
+<li><a class="" href="edukator-07-dokazi-i-brend.html">7. Dokazni motor i lični brend</a></li>
+<li><a class="" href="edukator-08-coaching-plan.html">8. Tvoj 90-dnevni plan</a></li>
+<li><a class="" href="edukator-09-tvoj-slucaj.html">9. Primena na tvoj slučaj</a></li>
+</ul></div>
+</nav>
+<div class="content">
+<div class="article-wrap"><article class="article"><div class="crumbs"><a href="index.html">Početna</a><span class="sep">/</span><span>Claude Code Biblija</span></div><h2 id="modul-1-mentalni-model--kako-claude-code-razmišlja">Modul 1: Mentalni model — kako Claude Code „razmišlja"</h2>
+<p>Ovo je najvažnije poglavlje u celom dokumentu. Sve ostalo — komande, alati, trikovi — ima smisla tek kada razumeš kako Claude Code funkcioniše iznutra. Dobra vest: ne treba ti nikakvo tehničko znanje. Treba ti samo jedna dobra analogija, i držaćemo se nje do kraja.</p>
+<h3 id="šta-ćeš-naučiti">Šta ćeš naučiti</h3>
+<ul>
+<li>Centralnu analogiju: Claude kao genijalan saradnik sa ograničenom radnom memorijom</li>
+<li>Šta su sesija, kontekst i tokeni — i zašto kraće sesije daju bolje rezultate</li>
+<li>Čemu služi <code>CLAUDE.md</code> i zašto je to najvažniji fajl u tvom projektu</li>
+<li>Princip „ti si direktor": definišeš ŠTA i KADA je gotovo, ne KAKO</li>
+<li>Princip „veruj, ali traži dokaz" i zašto su testovi kompas autonomnog rada</li>
+</ul>
+<h3 id="genijalan-saradnik-koji-svako-jutro-počinje-ispočetka">Genijalan saradnik koji svako jutro počinje ispočetka</h3>
+<p>Zamisli da si zaposlio saradnika koji je neverovatno sposoban: programira na svim jezicima, dizajnira, piše, istražuje, radi brzo i nikad se ne žali. Ali ima jednu neobičnu osobinu — <strong>svako jutro dolazi na posao bez ijednog sećanja na juče</strong>. Ne pamti šta ste dogovorili, šta je radio, ni zašto.</p>
+<p>Jedino što ponese sa sobom jeste <strong>priručnik firme</strong> koji mu ostaviš na stolu. Ako u priručniku piše šta je projekat, kako se pokreće i koja su pravila — on za pet minuta opet zna sve što mu treba. Ako priručnik ne postoji, svako jutro počinje od nule i ponavlja jučerašnje greške.</p>
+<p>To je Claude Code. Genijalan, vredan, ali bez trajne memorije između razgovora. Taj priručnik se zove <code>CLAUDE.md</code> — vratićemo se na njega za koji minut.</p>
+<h3 id="sesija-jedan-razgovor-jedna-radna-memorija">Sesija: jedan razgovor, jedna radna memorija</h3>
+<p><strong>Sesija</strong> je jedan razgovor sa Claude-om — od trenutka kad ga pokreneš do trenutka kad razgovor zatvoriš. Sve što se dogodi unutar sesije (tvoje poruke, fajlovi koje je Claude pročitao, kod koji je napisao, greške koje je video) čini njegov <strong>kontekst</strong> — radnu memoriju tog razgovora.</p>
+<p>Ključno je razumeti: kontekst nije beskonačan. To je kao radni sto — prostran, ali ipak sto. Dok je na njemu nekoliko urednih fascikli, saradnik radi sjajno. Kad nagomilaš sto papira iz pet različitih projekata, počinje da gubi nit: zaboravlja šta ste rekli na početku, meša zadatke, pravi greške koje ranije ne bi.</p>
+<p>Zato važi praktično pravilo koje ćeš sretati kroz ceo kurs:</p>
+<blockquote>
+<p><strong>Kraće, fokusirane sesije daju bolji rezultat od jedne maratonske.</strong> Jedna sesija = jedan zadatak ili jedna tema.</p>
+</blockquote>
+<p>Kad završiš zadatak, ne nastavljaj u istom razgovoru sa potpuno novom temom. Imaš dve komande za higijenu konteksta:</p>
+<ul>
+<li><code>/clear</code> — briše kontekst i počinje svežu sesiju. Koristi kad prelaziš na novi zadatak.</li>
+<li><code>/compact</code> — sažima dugačak razgovor da oslobodi prostor, a zadrži suštinu. Koristi kad si usred posla, a razgovor se odužio.</li>
+</ul>
+<h3 id="tokeni-jedinica-prostora-za-razmišljanje">Tokeni: jedinica prostora za razmišljanje</h3>
+<p>Verovatno ćeš negde sresti reč <strong>token</strong>. Najjednostavnije: token je jedinica „prostora za razmišljanje". Svaka tvoja poruka, svaki fajl koji Claude pročita, svaki njegov odgovor — sve to zauzima tokene, kao što papiri zauzimaju mesto na radnom stolu.</p>
+<p>Ne moraš da ih brojiš ni da ih razumeš dublje od toga. Dovoljno je da znaš: prostor je ograničen, pa ga ne trošiš na nebitno. To je još jedan razlog za kratke, fokusirane sesije.</p>
+<h3 id="claudemd-priručnik-koji-novi-član-tima-pročita-prvog-dana">CLAUDE.md: priručnik koji novi član tima pročita prvog dana</h3>
+<p>Sećaš se priručnika sa početka? <code>CLAUDE.md</code> je običan tekstualni fajl u folderu tvog projekta koji Claude <strong>automatski učitava na početku svake sesije</strong>. To i trajna memorija (napomene zabeležene porukom koja počinje sa <code>#</code>) jedino su što pouzdano preživljava između razgovora.</p>
+<p>Šta u njemu treba da piše? Isto što bi rekao novom članu tima prvog radnog dana:</p>
+<ul>
+<li>Šta je ovaj projekat i kome služi</li>
+<li>Kako se pokreće i kako se proverava da li radi</li>
+<li>Pravila i konvencije („dugmad su uvek plava", „tekstovi su na srpskom")</li>
+<li>Odluke koje ste već doneli, da ih ne preispituje svaki put</li>
+</ul>
+<p>Ne moraš da ga pišeš ručno — komanda <code>/init</code> generiše <code>CLAUDE.md</code> analizom tvog projekta (detaljno u Modulu 3). A kad usred rada zaključiš nešto što želiš da Claude trajno zapamti, samo počni poruku znakom tastera <code>#</code>:</p>
+<pre><code># Svi tekstovi u aplikaciji su na srpskom, latinica. Nikad ćirilica, nikad engleski.</code></pre>
+<p>Claude tu napomenu trajno beleži, pa je zna i u svim budućim sesijama.</p>
+<h3 id="ti-si-direktor-definiši-šta-ne-kako">Ti si direktor: definiši ŠTA, ne KAKO</h3>
+<p>Dobar direktor ne stoji programeru iza leđa i ne diktira mu svaki red koda — niti bi umeo. Dobar direktor kaže <strong>šta</strong> treba da se napravi i <strong>po čemu će se znati da je gotovo</strong>. To je tvoja uloga.</p>
+<p>❌ Loš prompt (mikromenadžment nečega što ne razumeš):</p>
+<pre><code>Napravi React komponentu sa useState hookom koja preko fetch API-ja
+poziva endpoint i renderuje listu.</code></pre>
+<p>✅ Dobar prompt (jasan cilj + kriterijum gotovosti):</p>
+<pre><code>Korisnik treba da vidi listu svojih prethodnih porudžbina, od najnovije
+ka najstarijoj. Gotovo je kada: (1) lista se prikazuje na stranici
+&quot;Moje porudžbine&quot;, (2) ako porudžbina nema, piše &quot;Još nemaš porudžbina&quot;,
+(3) pokažeš mi screenshot obe situacije.</code></pre>
+<p>Primeti šta se desilo: nisi rekao nijednu tehničku reč, a zadatak je precizniji nego u prvom primeru. Kriterijum gotovosti — „po čemu ću znati da je završeno" — najmoćniji je alat netehničkog direktora. Formulu savršenog prompta razrađujemo detaljno u Modulu 6.</p>
+<h3 id="veruj-ali-traži-dokaz">Veruj, ali traži dokaz</h3>
+<p>Claude je vredan saradnik, ali kao i svaki saradnik — ume da kaže „gotovo je, radi" a da nije baš proverio. Zato uvedi gvozdeno pravilo: <strong>tvrdnja bez dokaza se ne računa</strong>.</p>
+<p>Dokaz je nešto što možeš da vidiš svojim očima:</p>
+<ul>
+<li><strong>rezultat testa</strong> (npr. ispis da je svih 12 testova prošlo),</li>
+<li><strong>screenshot</strong> ekrana na kom se vidi da funkcija radi,</li>
+<li><strong>log</strong> — ispis programa koji pokazuje šta se stvarno dogodilo.</li>
+</ul>
+<p>Claude Code može sam da pokrene tvoju aplikaciju i proveri je u browseru: da klikće, popunjava forme i napravi screenshot. Iskoristi to — umesto „jesi li siguran da radi?", traži:</p>
+<pre><code>Pokreni aplikaciju, prođi kroz prijavu kao novi korisnik i pokaži mi
+screenshot ekrana posle uspešne prijave. Zatim pokreni testove i
+pokaži mi ispis.</code></pre>
+<h3 id="testovi-kompas-autonomnog-rada">Testovi: kompas autonomnog rada</h3>
+<p><strong>Test</strong> je mali automatski program koji proverava da li tvoja aplikacija radi ispravno — kao kontrolor kvaliteta koji svaki proizvod pregleda po istoj listi, svaki put, za par sekundi.</p>
+<p>Zašto su testovi toliko važni baš tebi, koji kod ne čitaš? Zato što bez njih <strong>Claude sam sebi sudi</strong>. Napiše kod, pogleda ga i kaže „izgleda dobro" — a ti nemaš način da proveriš. Sa testovima postoji objektivan, merljiv sudija: testovi ili prolaze ili ne prolaze, i to vidiš crno na belo.</p>
+<p>To postaje presudno kad Claude radi autonomno, bez tebe (Modul 7): testovi su kompas po kom se ravna i merilo po kom staje. Bez kompasa, autonoman rad je lutanje. Kako da dobiješ testove a da ih ne pišeš sam — u Modulu 3.</p>
+<h3 id="vežba">Vežba</h3>
+<p>Proveri novi mentalni model na delu, korak po korak:</p>
+<ol type="1">
+<li>Otvori Claude Code u bilo kom folderu (i prazan je u redu).</li>
+<li>Napiši mu: <code>Zapamti za ovaj razgovor: moja omiljena boja je tirkizna.</code></li>
+<li>Postavi par nevezanih pitanja, pa pitaj: <code>Koja je moja omiljena boja?</code> — znaće, jer je to ista sesija.</li>
+<li>Ukucaj <code>/clear</code>, pa ponovo pitaj za omiljenu boju. Neće znati — kontekst je obrisan. Upravo si video granicu radne memorije.</li>
+<li>Sada napiši: <code># Moja omiljena boja je tirkizna.</code> — pa opet <code>/clear</code> i pitaj. Ovog puta zna, jer si upisao u trajnu memoriju.</li>
+<li>Za kraj, formuliši jedan zadatak iz svog posla po formuli: šta treba da se desi + tri kriterijuma gotovosti + koji dokaz tražiš. Sačuvaj ga — koristićeš ga u Modulu 6.</li>
+</ol>
+<h3 id="najčešće-greške">Najčešće greške</h3>
+<ol type="1">
+<li><strong>Maratonska sesija za pet različitih tema.</strong> Rezultat: Claude meša zadatke i „zaboravlja" dogovore s početka. Rešenje: jedan zadatak = jedna sesija; između zadataka <code>/clear</code>, usred dugog zadatka <code>/compact</code>.</li>
+<li><strong>Očekivanje da Claude pamti jučerašnji razgovor.</strong> Ne pamti — to nije kvar, tako radi. Rešenje: sve trajno važno ide u <code>CLAUDE.md</code> ili u poruku koja počinje sa <code>#</code>.</li>
+<li><strong>Mikromenadžovanje tehničkih detalja.</strong> Diktiraš „kako" iz polovičnog znanja i vezuješ Claude-u ruke. Rešenje: definiši šta i kriterijum gotovosti, a izbor alata prepusti njemu.</li>
+<li><strong>Prihvatanje „gotovo je" bez dokaza.</strong> Rešenje: uvek traži test, screenshot ili log. Bez dokaza, posao nije završen.</li>
+<li><strong>Prepun <code>CLAUDE.md</code> sa svim i svačim.</strong> Priručnik od 200 strana niko ne čita — i troši dragocene tokene u svakoj sesiji. Rešenje: samo ono što novi član tima zaista mora da zna prvog dana.</li>
+</ol>
+<h3 id="kontrolna-lista">Kontrolna lista</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Umem svojim rečima da objasnim analogiju „genijalan saradnik bez trajne memorije"</label></li>
+<li><label><input type="checkbox" />Znam šta su sesija, kontekst i tokeni i zašto kraće sesije rade bolje</label></li>
+<li><label><input type="checkbox" />Znam kada koristim <code>/clear</code>, a kada <code>/compact</code></label></li>
+<li><label><input type="checkbox" />Znam čemu služi <code>CLAUDE.md</code> i kako sa <code>#</code> trajno zabeležim napomenu</label></li>
+<li><label><input type="checkbox" />Moji zadaci imaju kriterijum gotovosti, a ne tehnička uputstva</label></li>
+<li><label><input type="checkbox" />Ne prihvatam „gotovo je" bez testa, screenshota ili loga</label></li>
+</ul>
+<h3 id="proveri-znanje">Proveri znanje</h3>
+<p><strong>1. Zašto Claude na početku nove sesije ne zna ništa o jučerašnjem dogovoru, i šta je jedini pouzdan način da to „preživi"?</strong></p>
+<p>Claude nema trajnu memoriju između sesija — svaki razgovor počinje od nule. Preživljava samo ono što je zapisano: <code>CLAUDE.md</code> (učitava se na početku svake sesije) i napomene zabeležene porukom koja počinje sa <code>#</code>.</p>
+<p><strong>2. Koja je razlika između <code>/clear</code> i <code>/compact</code>?</strong></p>
+<p><code>/clear</code> briše ceo kontekst i počinje svežu sesiju — koristi se pri prelasku na novi zadatak. <code>/compact</code> sažima dosadašnji razgovor da oslobodi prostor, ali zadržava suštinu — koristi se usred dugog zadatka.</p>
+<p><strong>3. Zašto su testovi posebno važni kada Claude radi autonomno?</strong></p>
+<p>Bez testova Claude sam ocenjuje sopstveni rad („izgleda dobro"), a ti to ne možeš da proveriš. Testovi daju objektivan, merljiv kriterijum — prolaze ili ne prolaze — pa autonoman rad dobija kompas i jasan uslov završetka.</p>
+<nav class="pager">
+<a class="prev" href="claude-code-00-uvod.html"><span class="lbl">← Prethodno</span><span class="ttl">Uvod</span></a>
+<a class="next" href="claude-code-02-priprema-okruzenja.html"><span class="lbl">Sledeće →</span><span class="ttl">2. Priprema okruženja</span></a>
+</nav></article></div><aside class="toc"><div class="toc-inner">
+<div class="toc-title">Na ovoj strani</div><ul>
+<li class="lvl-2"><a href="#šta-ćeš-naučiti">Šta ćeš naučiti</a></li>
+<li class="lvl-2"><a href="#genijalan-saradnik-koji-svako-jutro-počinje-ispočetka">Genijalan saradnik koji svako jutro počinje ispočetka</a></li>
+<li class="lvl-2"><a href="#sesija-jedan-razgovor-jedna-radna-memorija">Sesija: jedan razgovor, jedna radna memorija</a></li>
+<li class="lvl-2"><a href="#tokeni-jedinica-prostora-za-razmišljanje">Tokeni: jedinica prostora za razmišljanje</a></li>
+<li class="lvl-2"><a href="#claudemd-priručnik-koji-novi-član-tima-pročita-prvog-dana">CLAUDE.md: priručnik koji novi član tima pročita prvog dana</a></li>
+<li class="lvl-2"><a href="#ti-si-direktor-definiši-šta-ne-kako">Ti si direktor: definiši ŠTA, ne KAKO</a></li>
+<li class="lvl-2"><a href="#veruj-ali-traži-dokaz">Veruj, ali traži dokaz</a></li>
+<li class="lvl-2"><a href="#testovi-kompas-autonomnog-rada">Testovi: kompas autonomnog rada</a></li>
+<li class="lvl-2"><a href="#vežba">Vežba</a></li>
+<li class="lvl-2"><a href="#najčešće-greške">Najčešće greške</a></li>
+<li class="lvl-2"><a href="#kontrolna-lista">Kontrolna lista</a></li>
+<li class="lvl-2"><a href="#proveri-znanje">Proveri znanje</a></li>
+</ul></div></aside>
+</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
