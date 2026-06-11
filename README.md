@@ -1,12 +1,12 @@
-# Biblije — statički sajt
+# Biblije: statički sajt
 
 Statički web sajt napravljen od markdown priručnika u [`docs/`](docs/). Sadrži tri knjige:
 
 | Knjiga | Poglavlja | Izvor |
 |---|---|---|
-| **Claude Code Biblija** — od ideje do digitalnog proizvoda | 16 | `docs/biblija-parts/` |
+| **Claude Code Biblija**: od ideje do digitalnog proizvoda | 16 | `docs/biblija-parts/` |
 | **Marketing Biblija** za SaaS | 15 | `docs/marketing-parts/` |
-| **Top 5% Edukator** — coaching priručnik | 10 | `docs/edukator-parts/` |
+| **Top 5% Edukator**: mentorski priručnik | 10 | `docs/edukator-parts/` |
 
 ## Kako radi
 
